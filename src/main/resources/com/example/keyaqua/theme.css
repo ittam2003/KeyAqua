@@ -1,0 +1,40 @@
+.label{
+    -fx-background-color: #0c0a28;
+    -fx-padding: 23;
+    -fx-background-radius: 20;
+}
+
+.button{
+    -fx-background-color: #141044;
+    -fx-text-fill: white;
+    -fx-background-radius: 30;
+
+}
+
+.button:hover{
+    -fx-background-color: #312b75;
+}
+
+.button:pressed{
+    -fx-background-color: #524d93;
+}
+
+#bg{
+    -fx-background-color:  linear-gradient(from 0.0% 0.0% to 100.0% 0.0%, #382ea9 0.0%, #6d51d0 100.0%);
+}
+
+#about{
+    -fx-background-color: transparent;
+}
+
+#about:hover{
+    -fx-background-color: rgba(255,255,255,0.27);
+    -fx-background-radius: 30px;
+    -fx-cursor: HAND
+}
+
+#about:pressed{
+    -fx-background-color: rgba(255,255,255,0.56);
+    -fx-background-radius: 30px;
+    -fx-cursor: HAND
+}
