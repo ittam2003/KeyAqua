@@ -5,12 +5,14 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
+import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.Clipboard;
 import javafx.scene.input.ClipboardContent;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.HBox;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
@@ -376,6 +378,246 @@ public class HelloController implements Initializable {
         popupStage.show();
     }
 
+    public void clearKey1(ActionEvent event) throws IOException {
+        // Create a GridPane to hold the controls
+        GridPane gridPane = new GridPane();
+        gridPane.setPrefSize(300, 150);
+        gridPane.setHgap(10);
+        gridPane.setVgap(10);
+        gridPane.setPadding(new Insets(10));
+
+        //Add an error message
+        Label warningMessage = new Label();
+        warningMessage.setText("Are you sure you want to delete this key?");
+        warningMessage.setTextFill(Color.color(1, 0, 0));
+        gridPane.add(warningMessage, 1, 0);
+
+        // Create a button to submit the form
+        Button submitButton = new Button("Yes");
+        submitButton.setOnAction(event1 -> {
+
+            Database database = new Database("key1");
+            try {
+                database.writeKeyToFile("No Key");
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+            refresh();
+            ((Stage) submitButton.getScene().getWindow()).close(); // Close the window
+        });
+        Button noButton = new Button("No");
+        noButton.setOnAction(event1 -> {
+            refresh();
+            ((Stage) noButton.getScene().getWindow()).close(); // Close the window
+        });
+        HBox choice = new HBox(noButton, submitButton);
+        choice.setAlignment(Pos.CENTER);
+        choice.setSpacing(20);
+        gridPane.add(choice, 1, 1);
+        Scene scene = new Scene(gridPane);
+
+        // Create a new Stage to hold the Scene
+        Stage popupStage = new Stage();
+        popupStage.setScene(scene);
+
+        // Set the title of the Stage and show it
+        popupStage.setTitle("Warning");
+        popupStage.setResizable(false);
+        popupStage.show();
+    }
+
+    public void clearKey2(ActionEvent event) throws IOException {
+        // Create a GridPane to hold the controls
+        GridPane gridPane = new GridPane();
+        gridPane.setPrefSize(300, 150);
+        gridPane.setHgap(10);
+        gridPane.setVgap(10);
+        gridPane.setPadding(new Insets(10));
+
+        //Add an error message
+        Label warningMessage = new Label();
+        warningMessage.setText("Are you sure you want to delete this key?");
+        warningMessage.setTextFill(Color.color(1, 0, 0));
+        gridPane.add(warningMessage, 1, 0);
+
+        // Create a button to submit the form
+        Button submitButton = new Button("Yes");
+        submitButton.setOnAction(event1 -> {
+
+            Database database = new Database("key2");
+            try {
+                database.writeKeyToFile("No Key");
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+            refresh();
+            ((Stage) submitButton.getScene().getWindow()).close(); // Close the window
+        });
+        Button noButton = new Button("No");
+        noButton.setOnAction(event1 -> {
+            refresh();
+            ((Stage) noButton.getScene().getWindow()).close(); // Close the window
+        });
+        HBox choice = new HBox(noButton, submitButton);
+        choice.setAlignment(Pos.CENTER);
+        choice.setSpacing(20);
+        gridPane.add(choice, 1, 1);
+        Scene scene = new Scene(gridPane);
+
+        // Create a new Stage to hold the Scene
+        Stage popupStage = new Stage();
+        popupStage.setScene(scene);
+
+        // Set the title of the Stage and show it
+        popupStage.setTitle("Warning");
+        popupStage.setResizable(false);
+        popupStage.show();
+    }
+
+    public void clearKey3(ActionEvent event) throws IOException {
+        // Create a GridPane to hold the controls
+        GridPane gridPane = new GridPane();
+        gridPane.setPrefSize(300, 150);
+        gridPane.setHgap(10);
+        gridPane.setVgap(10);
+        gridPane.setPadding(new Insets(10));
+
+        //Add an error message
+        Label warningMessage = new Label();
+        warningMessage.setText("Are you sure you want to delete this key?");
+        warningMessage.setTextFill(Color.color(1, 0, 0));
+        gridPane.add(warningMessage, 1, 0);
+
+        // Create a button to submit the form
+        Button submitButton = new Button("Yes");
+        submitButton.setOnAction(event1 -> {
+
+            Database database = new Database("key3");
+            try {
+                database.writeKeyToFile("No Key");
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+            refresh();
+            ((Stage) submitButton.getScene().getWindow()).close(); // Close the window
+        });
+        Button noButton = new Button("No");
+        noButton.setOnAction(event1 -> {
+            refresh();
+            ((Stage) noButton.getScene().getWindow()).close(); // Close the window
+        });
+        HBox choice = new HBox(noButton, submitButton);
+        choice.setAlignment(Pos.CENTER);
+        choice.setSpacing(20);
+        gridPane.add(choice, 1, 1);
+        Scene scene = new Scene(gridPane);
+
+        // Create a new Stage to hold the Scene
+        Stage popupStage = new Stage();
+        popupStage.setScene(scene);
+
+        // Set the title of the Stage and show it
+        popupStage.setTitle("Warning");
+        popupStage.setResizable(false);
+        popupStage.show();
+    }
+
+    public void clearKey4(ActionEvent event) throws IOException {
+        // Create a GridPane to hold the controls
+        GridPane gridPane = new GridPane();
+        gridPane.setPrefSize(300, 150);
+        gridPane.setHgap(10);
+        gridPane.setVgap(10);
+        gridPane.setPadding(new Insets(10));
+
+        //Add an error message
+        Label warningMessage = new Label();
+        warningMessage.setText("Are you sure you want to delete this key?");
+        warningMessage.setTextFill(Color.color(1, 0, 0));
+        gridPane.add(warningMessage, 1, 0);
+
+        // Create a button to submit the form
+        Button submitButton = new Button("Yes");
+        submitButton.setOnAction(event1 -> {
+
+            Database database = new Database("key4");
+            try {
+                database.writeKeyToFile("No Key");
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+            refresh();
+            ((Stage) submitButton.getScene().getWindow()).close(); // Close the window
+        });
+        Button noButton = new Button("No");
+        noButton.setOnAction(event1 -> {
+            refresh();
+            ((Stage) noButton.getScene().getWindow()).close(); // Close the window
+        });
+        HBox choice = new HBox(noButton, submitButton);
+        choice.setAlignment(Pos.CENTER);
+        choice.setSpacing(20);
+        gridPane.add(choice, 1, 1);
+        Scene scene = new Scene(gridPane);
+
+        // Create a new Stage to hold the Scene
+        Stage popupStage = new Stage();
+        popupStage.setScene(scene);
+
+        // Set the title of the Stage and show it
+        popupStage.setTitle("Warning");
+        popupStage.setResizable(false);
+        popupStage.show();
+    }
+
+    public void clearKey5(ActionEvent event) throws IOException {
+        // Create a GridPane to hold the controls
+        GridPane gridPane = new GridPane();
+        gridPane.setPrefSize(300, 150);
+        gridPane.setHgap(10);
+        gridPane.setVgap(10);
+        gridPane.setPadding(new Insets(10));
+
+        //Add an error message
+        Label warningMessage = new Label();
+        warningMessage.setText("Are you sure you want to delete this key?");
+        warningMessage.setTextFill(Color.color(1, 0, 0));
+        gridPane.add(warningMessage, 1, 0);
+
+        // Create a button to submit the form
+        Button submitButton = new Button("Yes");
+        submitButton.setOnAction(event1 -> {
+
+            Database database = new Database("key5");
+            try {
+                database.writeKeyToFile("No Key");
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+            refresh();
+            ((Stage) submitButton.getScene().getWindow()).close(); // Close the window
+        });
+        Button noButton = new Button("No");
+        noButton.setOnAction(event1 -> {
+            refresh();
+            ((Stage) noButton.getScene().getWindow()).close(); // Close the window
+        });
+        HBox choice = new HBox(noButton, submitButton);
+        choice.setAlignment(Pos.CENTER);
+        choice.setSpacing(20);
+        gridPane.add(choice, 1, 1);
+        Scene scene = new Scene(gridPane);
+
+        // Create a new Stage to hold the Scene
+        Stage popupStage = new Stage();
+        popupStage.setScene(scene);
+
+        // Set the title of the Stage and show it
+        popupStage.setTitle("Warning");
+        popupStage.setResizable(false);
+        popupStage.show();
+    }
+
     public void refresh(){
         File file1 = new File("Keys/key1.txt");
         if (file1 != null) {
@@ -455,7 +697,7 @@ public class HelloController implements Initializable {
         logo.setFitHeight(100);
         alertDialog.setGraphic(logo);
         alertDialog.setTitle("About");
-        alertDialog.setHeaderText("version 1");
+        alertDialog.setHeaderText("Version Alpha 0.2");
         alertDialog.setContentText("Created by Calm Matt");
         Optional<ButtonType> respons = alertDialog.showAndWait();
     }
