@@ -639,7 +639,7 @@ public class HelloController implements Initializable {
         logo.setFitHeight(100);
         alertDialog.setGraphic(logo);
         alertDialog.setTitle("About");
-        alertDialog.setHeaderText("Version Alpha 0.3");
+        alertDialog.setHeaderText("Version 0.0.4");
         alertDialog.setContentText("Created by Calm Matt");
         DialogPane dialogPane = alertDialog.getDialogPane();
         dialogPane.getStylesheets().add(Objects.requireNonNull(getClass().getResource("/com/example/keyaqua/alert.css")).toExternalForm());
