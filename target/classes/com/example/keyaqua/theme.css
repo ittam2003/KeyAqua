@@ -1,14 +1,13 @@
 .label{
-    -fx-background-color: #0c0a28;
+    -fx-background-color: #2d2d2d;
     -fx-padding: 23;
     -fx-background-radius: 20;
 }
 
 .button{
-    -fx-background-color: #141044;
+    -fx-background-color: #2d2d2d;
     -fx-text-fill: white;
-    -fx-background-radius: 30;
-
+    -fx-background-radius: 0px;
 }
 
 .button:hover{
@@ -20,21 +19,5 @@
 }
 
 #bg{
-    -fx-background-color:  linear-gradient(from 0.0% 0.0% to 100.0% 0.0%, #382ea9 0.0%, #6d51d0 100.0%);
-}
-
-#about{
-    -fx-background-color: transparent;
-}
-
-#about:hover{
-    -fx-background-color: rgba(255,255,255,0.27);
-    -fx-background-radius: 30px;
-    -fx-cursor: HAND
-}
-
-#about:pressed{
-    -fx-background-color: rgba(255,255,255,0.56);
-    -fx-background-radius: 30px;
-    -fx-cursor: HAND
+    -fx-background-color: #151515;
 }

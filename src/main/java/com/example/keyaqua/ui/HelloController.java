@@ -1,6 +1,7 @@
 package com.example.keyaqua.ui;
 
 import com.example.keyaqua.Logic.Database;
+import java.util.Objects;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -42,6 +43,7 @@ public class HelloController implements Initializable {
     @FXML
     private Label key5;
 
+    //-fx-background-color:  linear-gradient(from 0.0% 0.0% to 100.0% 0.0%, #382ea9 0.0%, #6d51d0 100.0%);
 
     public void copy1(){
         File file = new File("Keys/key1.txt");
@@ -379,23 +381,29 @@ public class HelloController implements Initializable {
     }
 
     public void clearKey1(ActionEvent event) throws IOException {
-        // Create a GridPane to hold the controls
-        GridPane gridPane = new GridPane();
-        gridPane.setPrefSize(300, 150);
-        gridPane.setHgap(10);
-        gridPane.setVgap(10);
-        gridPane.setPadding(new Insets(10));
+        Alert alertDialog = new Alert(Alert.AlertType.INFORMATION);
+        ImageView logo = new ImageView("/com/example/keyaqua/clear.png");
+        logo.setFitWidth(100);
+        logo.setFitHeight(100);
+        alertDialog.setGraphic(logo);
+        alertDialog.setTitle("Warning");
+        alertDialog.setHeaderText("Are you sure you want to delete this key?");
+        // Create buttons for the alert
+        ButtonType buttonTypeYes = new ButtonType("Yes");
+        ButtonType buttonTypeNo = new ButtonType("No");
 
-        //Add an error message
-        Label warningMessage = new Label();
-        warningMessage.setText("Are you sure you want to delete this key?");
-        warningMessage.setTextFill(Color.color(1, 0, 0));
-        gridPane.add(warningMessage, 1, 0);
+        alertDialog.getButtonTypes().setAll(buttonTypeYes, buttonTypeNo);
+        DialogPane dialogPane = alertDialog.getDialogPane();
+        dialogPane.getStylesheets().add(Objects.requireNonNull(getClass().getResource("/com/example/keyaqua/alert.css")).toExternalForm());
+        dialogPane.getStyleClass().add("custom-alert-dialog");
+        alertDialog.getDialogPane().lookup(".header-panel").setStyle("-fx-background-color: #3d3d3d;");
 
-        // Create a button to submit the form
-        Button submitButton = new Button("Yes");
-        submitButton.setOnAction(event1 -> {
 
+        // Show the alert and wait for the user's response
+        Optional<ButtonType> result = alertDialog.showAndWait();
+
+        // Handle the user's choice
+        if (result.isPresent() && result.get() == buttonTypeYes) {
             Database database = new Database("key1");
             try {
                 database.writeKeyToFile("No Key");
@@ -403,47 +411,35 @@ public class HelloController implements Initializable {
                 throw new RuntimeException(e);
             }
             refresh();
-            ((Stage) submitButton.getScene().getWindow()).close(); // Close the window
-        });
-        Button noButton = new Button("No");
-        noButton.setOnAction(event1 -> {
+        } else if (result.isPresent() && result.get() == buttonTypeNo) {
             refresh();
-            ((Stage) noButton.getScene().getWindow()).close(); // Close the window
-        });
-        HBox choice = new HBox(noButton, submitButton);
-        choice.setAlignment(Pos.CENTER);
-        choice.setSpacing(20);
-        gridPane.add(choice, 1, 1);
-        Scene scene = new Scene(gridPane);
-
-        // Create a new Stage to hold the Scene
-        Stage popupStage = new Stage();
-        popupStage.setScene(scene);
-
-        // Set the title of the Stage and show it
-        popupStage.setTitle("Warning");
-        popupStage.setResizable(false);
-        popupStage.show();
+        }
     }
 
     public void clearKey2(ActionEvent event) throws IOException {
-        // Create a GridPane to hold the controls
-        GridPane gridPane = new GridPane();
-        gridPane.setPrefSize(300, 150);
-        gridPane.setHgap(10);
-        gridPane.setVgap(10);
-        gridPane.setPadding(new Insets(10));
+        Alert alertDialog = new Alert(Alert.AlertType.INFORMATION);
+        ImageView logo = new ImageView("/com/example/keyaqua/clear.png");
+        logo.setFitWidth(100);
+        logo.setFitHeight(100);
+        alertDialog.setGraphic(logo);
+        alertDialog.setTitle("Warning");
+        alertDialog.setHeaderText("Are you sure you want to delete this key?");
+        // Create buttons for the alert
+        ButtonType buttonTypeYes = new ButtonType("Yes");
+        ButtonType buttonTypeNo = new ButtonType("No");
 
-        //Add an error message
-        Label warningMessage = new Label();
-        warningMessage.setText("Are you sure you want to delete this key?");
-        warningMessage.setTextFill(Color.color(1, 0, 0));
-        gridPane.add(warningMessage, 1, 0);
+        alertDialog.getButtonTypes().setAll(buttonTypeYes, buttonTypeNo);
+        DialogPane dialogPane = alertDialog.getDialogPane();
+        dialogPane.getStylesheets().add(Objects.requireNonNull(getClass().getResource("/com/example/keyaqua/alert.css")).toExternalForm());
+        dialogPane.getStyleClass().add("custom-alert-dialog");
+        alertDialog.getDialogPane().lookup(".header-panel").setStyle("-fx-background-color: #3d3d3d;");
 
-        // Create a button to submit the form
-        Button submitButton = new Button("Yes");
-        submitButton.setOnAction(event1 -> {
 
+        // Show the alert and wait for the user's response
+        Optional<ButtonType> result = alertDialog.showAndWait();
+
+        // Handle the user's choice
+        if (result.isPresent() && result.get() == buttonTypeYes) {
             Database database = new Database("key2");
             try {
                 database.writeKeyToFile("No Key");
@@ -451,47 +447,35 @@ public class HelloController implements Initializable {
                 throw new RuntimeException(e);
             }
             refresh();
-            ((Stage) submitButton.getScene().getWindow()).close(); // Close the window
-        });
-        Button noButton = new Button("No");
-        noButton.setOnAction(event1 -> {
+        } else if (result.isPresent() && result.get() == buttonTypeNo) {
             refresh();
-            ((Stage) noButton.getScene().getWindow()).close(); // Close the window
-        });
-        HBox choice = new HBox(noButton, submitButton);
-        choice.setAlignment(Pos.CENTER);
-        choice.setSpacing(20);
-        gridPane.add(choice, 1, 1);
-        Scene scene = new Scene(gridPane);
-
-        // Create a new Stage to hold the Scene
-        Stage popupStage = new Stage();
-        popupStage.setScene(scene);
-
-        // Set the title of the Stage and show it
-        popupStage.setTitle("Warning");
-        popupStage.setResizable(false);
-        popupStage.show();
+        }
     }
 
     public void clearKey3(ActionEvent event) throws IOException {
-        // Create a GridPane to hold the controls
-        GridPane gridPane = new GridPane();
-        gridPane.setPrefSize(300, 150);
-        gridPane.setHgap(10);
-        gridPane.setVgap(10);
-        gridPane.setPadding(new Insets(10));
+        Alert alertDialog = new Alert(Alert.AlertType.INFORMATION);
+        ImageView logo = new ImageView("/com/example/keyaqua/clear.png");
+        logo.setFitWidth(100);
+        logo.setFitHeight(100);
+        alertDialog.setGraphic(logo);
+        alertDialog.setTitle("Warning");
+        alertDialog.setHeaderText("Are you sure you want to delete this key?");
+        // Create buttons for the alert
+        ButtonType buttonTypeYes = new ButtonType("Yes");
+        ButtonType buttonTypeNo = new ButtonType("No");
 
-        //Add an error message
-        Label warningMessage = new Label();
-        warningMessage.setText("Are you sure you want to delete this key?");
-        warningMessage.setTextFill(Color.color(1, 0, 0));
-        gridPane.add(warningMessage, 1, 0);
+        alertDialog.getButtonTypes().setAll(buttonTypeYes, buttonTypeNo);
+        DialogPane dialogPane = alertDialog.getDialogPane();
+        dialogPane.getStylesheets().add(Objects.requireNonNull(getClass().getResource("/com/example/keyaqua/alert.css")).toExternalForm());
+        dialogPane.getStyleClass().add("custom-alert-dialog");
+        alertDialog.getDialogPane().lookup(".header-panel").setStyle("-fx-background-color: #3d3d3d;");
 
-        // Create a button to submit the form
-        Button submitButton = new Button("Yes");
-        submitButton.setOnAction(event1 -> {
 
+        // Show the alert and wait for the user's response
+        Optional<ButtonType> result = alertDialog.showAndWait();
+
+        // Handle the user's choice
+        if (result.isPresent() && result.get() == buttonTypeYes) {
             Database database = new Database("key3");
             try {
                 database.writeKeyToFile("No Key");
@@ -499,47 +483,35 @@ public class HelloController implements Initializable {
                 throw new RuntimeException(e);
             }
             refresh();
-            ((Stage) submitButton.getScene().getWindow()).close(); // Close the window
-        });
-        Button noButton = new Button("No");
-        noButton.setOnAction(event1 -> {
+        } else if (result.isPresent() && result.get() == buttonTypeNo) {
             refresh();
-            ((Stage) noButton.getScene().getWindow()).close(); // Close the window
-        });
-        HBox choice = new HBox(noButton, submitButton);
-        choice.setAlignment(Pos.CENTER);
-        choice.setSpacing(20);
-        gridPane.add(choice, 1, 1);
-        Scene scene = new Scene(gridPane);
-
-        // Create a new Stage to hold the Scene
-        Stage popupStage = new Stage();
-        popupStage.setScene(scene);
-
-        // Set the title of the Stage and show it
-        popupStage.setTitle("Warning");
-        popupStage.setResizable(false);
-        popupStage.show();
+        }
     }
 
     public void clearKey4(ActionEvent event) throws IOException {
-        // Create a GridPane to hold the controls
-        GridPane gridPane = new GridPane();
-        gridPane.setPrefSize(300, 150);
-        gridPane.setHgap(10);
-        gridPane.setVgap(10);
-        gridPane.setPadding(new Insets(10));
+        Alert alertDialog = new Alert(Alert.AlertType.INFORMATION);
+        ImageView logo = new ImageView("/com/example/keyaqua/clear.png");
+        logo.setFitWidth(100);
+        logo.setFitHeight(100);
+        alertDialog.setGraphic(logo);
+        alertDialog.setTitle("Warning");
+        alertDialog.setHeaderText("Are you sure you want to delete this key?");
+        // Create buttons for the alert
+        ButtonType buttonTypeYes = new ButtonType("Yes");
+        ButtonType buttonTypeNo = new ButtonType("No");
 
-        //Add an error message
-        Label warningMessage = new Label();
-        warningMessage.setText("Are you sure you want to delete this key?");
-        warningMessage.setTextFill(Color.color(1, 0, 0));
-        gridPane.add(warningMessage, 1, 0);
+        alertDialog.getButtonTypes().setAll(buttonTypeYes, buttonTypeNo);
+        DialogPane dialogPane = alertDialog.getDialogPane();
+        dialogPane.getStylesheets().add(Objects.requireNonNull(getClass().getResource("/com/example/keyaqua/alert.css")).toExternalForm());
+        dialogPane.getStyleClass().add("custom-alert-dialog");
+        alertDialog.getDialogPane().lookup(".header-panel").setStyle("-fx-background-color: #3d3d3d;");
 
-        // Create a button to submit the form
-        Button submitButton = new Button("Yes");
-        submitButton.setOnAction(event1 -> {
 
+        // Show the alert and wait for the user's response
+        Optional<ButtonType> result = alertDialog.showAndWait();
+
+        // Handle the user's choice
+        if (result.isPresent() && result.get() == buttonTypeYes) {
             Database database = new Database("key4");
             try {
                 database.writeKeyToFile("No Key");
@@ -547,47 +519,35 @@ public class HelloController implements Initializable {
                 throw new RuntimeException(e);
             }
             refresh();
-            ((Stage) submitButton.getScene().getWindow()).close(); // Close the window
-        });
-        Button noButton = new Button("No");
-        noButton.setOnAction(event1 -> {
+        } else if (result.isPresent() && result.get() == buttonTypeNo) {
             refresh();
-            ((Stage) noButton.getScene().getWindow()).close(); // Close the window
-        });
-        HBox choice = new HBox(noButton, submitButton);
-        choice.setAlignment(Pos.CENTER);
-        choice.setSpacing(20);
-        gridPane.add(choice, 1, 1);
-        Scene scene = new Scene(gridPane);
-
-        // Create a new Stage to hold the Scene
-        Stage popupStage = new Stage();
-        popupStage.setScene(scene);
-
-        // Set the title of the Stage and show it
-        popupStage.setTitle("Warning");
-        popupStage.setResizable(false);
-        popupStage.show();
+        }
     }
 
     public void clearKey5(ActionEvent event) throws IOException {
-        // Create a GridPane to hold the controls
-        GridPane gridPane = new GridPane();
-        gridPane.setPrefSize(300, 150);
-        gridPane.setHgap(10);
-        gridPane.setVgap(10);
-        gridPane.setPadding(new Insets(10));
+        Alert alertDialog = new Alert(Alert.AlertType.INFORMATION);
+        ImageView logo = new ImageView("/com/example/keyaqua/clear.png");
+        logo.setFitWidth(100);
+        logo.setFitHeight(100);
+        alertDialog.setGraphic(logo);
+        alertDialog.setTitle("Warning");
+        alertDialog.setHeaderText("Are you sure you want to delete this key?");
+        // Create buttons for the alert
+        ButtonType buttonTypeYes = new ButtonType("Yes");
+        ButtonType buttonTypeNo = new ButtonType("No");
 
-        //Add an error message
-        Label warningMessage = new Label();
-        warningMessage.setText("Are you sure you want to delete this key?");
-        warningMessage.setTextFill(Color.color(1, 0, 0));
-        gridPane.add(warningMessage, 1, 0);
+        alertDialog.getButtonTypes().setAll(buttonTypeYes, buttonTypeNo);
+        DialogPane dialogPane = alertDialog.getDialogPane();
+        dialogPane.getStylesheets().add(Objects.requireNonNull(getClass().getResource("/com/example/keyaqua/alert.css")).toExternalForm());
+        dialogPane.getStyleClass().add("custom-alert-dialog");
+        alertDialog.getDialogPane().lookup(".header-panel").setStyle("-fx-background-color: #3d3d3d;");
 
-        // Create a button to submit the form
-        Button submitButton = new Button("Yes");
-        submitButton.setOnAction(event1 -> {
 
+        // Show the alert and wait for the user's response
+        Optional<ButtonType> result = alertDialog.showAndWait();
+
+        // Handle the user's choice
+        if (result.isPresent() && result.get() == buttonTypeYes) {
             Database database = new Database("key5");
             try {
                 database.writeKeyToFile("No Key");
@@ -595,27 +555,9 @@ public class HelloController implements Initializable {
                 throw new RuntimeException(e);
             }
             refresh();
-            ((Stage) submitButton.getScene().getWindow()).close(); // Close the window
-        });
-        Button noButton = new Button("No");
-        noButton.setOnAction(event1 -> {
+        } else if (result.isPresent() && result.get() == buttonTypeNo) {
             refresh();
-            ((Stage) noButton.getScene().getWindow()).close(); // Close the window
-        });
-        HBox choice = new HBox(noButton, submitButton);
-        choice.setAlignment(Pos.CENTER);
-        choice.setSpacing(20);
-        gridPane.add(choice, 1, 1);
-        Scene scene = new Scene(gridPane);
-
-        // Create a new Stage to hold the Scene
-        Stage popupStage = new Stage();
-        popupStage.setScene(scene);
-
-        // Set the title of the Stage and show it
-        popupStage.setTitle("Warning");
-        popupStage.setResizable(false);
-        popupStage.show();
+        }
     }
 
     public void refresh(){
@@ -697,8 +639,12 @@ public class HelloController implements Initializable {
         logo.setFitHeight(100);
         alertDialog.setGraphic(logo);
         alertDialog.setTitle("About");
-        alertDialog.setHeaderText("Version Alpha 0.2");
+        alertDialog.setHeaderText("Version Alpha 0.3");
         alertDialog.setContentText("Created by Calm Matt");
+        DialogPane dialogPane = alertDialog.getDialogPane();
+        dialogPane.getStylesheets().add(Objects.requireNonNull(getClass().getResource("/com/example/keyaqua/alert.css")).toExternalForm());
+        dialogPane.getStyleClass().add("custom-alert-dialog");
+        alertDialog.getDialogPane().lookup(".header-panel").setStyle("-fx-background-color: #3d3d3d;");
         Optional<ButtonType> respons = alertDialog.showAndWait();
     }
 

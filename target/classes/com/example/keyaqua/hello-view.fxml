@@ -4,25 +4,26 @@
 <?import javafx.scene.effect.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
 <?import javafx.scene.text.*?>
 
-<BorderPane fx:id="bg" prefHeight="720" prefWidth="600" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.keyaqua.ui.HelloController">
+<BorderPane fx:id="bg" prefHeight="600" prefWidth="1000" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.keyaqua.ui.HelloController">
     <VBox>
         <Button>
 
         </Button>
     </VBox>
    <top>
-      <ToolBar prefHeight="74.0" prefWidth="600.0" style="-fx-background-color: #222222;" BorderPane.alignment="CENTER">
+      <ToolBar prefHeight="74.0" prefWidth="600.0" style="-fx-background-color: #0e0e0e;" BorderPane.alignment="CENTER">
         <items>
-            <ImageView fitHeight="57.0" fitWidth="55.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@6676583.png" />
                </image>
             </ImageView>
             <Label style="-fx-background-color: transparent; -fx-padding: 0;" text="KeyAqua" textFill="WHITE">
                <font>
-                  <Font name="Corbel Bold" size="49.0" />
+                  <Font name="Corbel Bold" size="35.0" />
                </font>
             </Label>
         </items>
@@ -30,22 +31,22 @@
             <DropShadow />
          </effect>
           <HBox HBox.hgrow="ALWAYS" />
-          <Button fx:id="about" onAction="#aboutPage" style="-fx-background-color: transparent;">
-            <graphic>
-               <ImageView fitHeight="36.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
-                  <image>
-                     <Image url="@info.png" />
-                  </image>
-               </ImageView>
-            </graphic></Button>
+          <Button fx:id="about" onAction="#aboutPage" prefHeight="46.0" prefWidth="57.0" style="-fx-background-radius: 15;" text="About">
+            <font>
+               <Font name="Corbel Bold" size="12.0" />
+            </font></Button>
+         <Button disable="true" mnemonicParsing="false" prefHeight="46.0" prefWidth="57.0" style="-fx-background-radius: 15;" text="Log out">
+            <font>
+               <Font name="Corbel Bold" size="12.0" />
+            </font>
+         </Button>
       </ToolBar>
    </top>
    <center>
       <GridPane style="-fx-padding: 20;" BorderPane.alignment="CENTER">
         <columnConstraints>
-          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="100.0" prefWidth="0.0" />
-          <ColumnConstraints halignment="CENTER" hgrow="NEVER" minWidth="150.0" />
-            <ColumnConstraints halignment="CENTER" hgrow="NEVER" minWidth="200.0" />
+          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="606.0" minWidth="100.0" prefWidth="606.0" />
+          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="541.0" minWidth="100.0" prefWidth="354.0" />
         </columnConstraints>
         <rowConstraints>
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
@@ -60,7 +61,10 @@
                   <Font name="Corbel Light" size="20.0" />
                </font>
                <effect>
-                  <DropShadow />
+                  <DropShadow height="2.63" offsetY="3.0" radius="0.15749999999999997" width="0.0">
+                     <color>
+                        <Color red="0.1184210553765297" green="0.1184210553765297" blue="0.1184210553765297" />
+                     </color></DropShadow>
                </effect>
             </Label>
             <Label fx:id="key2" prefHeight="23.0" prefWidth="Infinity" text="Label" textFill="WHITE" GridPane.rowIndex="1">
@@ -68,7 +72,10 @@
                  <Font name="Corbel Light" size="20.0" />
              </font>
                <effect>
-                  <DropShadow />
+                  <DropShadow height="2.63" offsetY="3.0" radius="0.15749999999999997" width="0.0">
+                     <color>
+                        <Color red="0.1184210553765297" green="0.1184210553765297" blue="0.1184210553765297" />
+                     </color></DropShadow>
                </effect>
          </Label>
             <Label fx:id="key3" prefHeight="23.0" prefWidth="Infinity" text="Label" textFill="WHITE" GridPane.rowIndex="2">
@@ -76,7 +83,10 @@
                     <Font name="Corbel Light" size="20.0" />
                 </font>
                <effect>
-                  <DropShadow />
+                  <DropShadow height="2.63" offsetY="3.0" radius="0.15749999999999997" width="0.0">
+                     <color>
+                        <Color red="0.1184210553765297" green="0.1184210553765297" blue="0.1184210553765297" />
+                     </color></DropShadow>
                </effect>
             </Label>
             <Label fx:id="key4" prefHeight="23.0" prefWidth="Infinity" text="Label" textFill="WHITE" GridPane.rowIndex="3">
@@ -84,7 +94,10 @@
                     <Font name="Corbel Light" size="20.0" />
                 </font>
                <effect>
-                  <DropShadow />
+                  <DropShadow height="2.63" offsetY="3.0" radius="0.15749999999999997" width="0.0">
+                     <color>
+                        <Color red="0.1184210553765297" green="0.1184210553765297" blue="0.1184210553765297" />
+                     </color></DropShadow>
                </effect>
             </Label>
             <Label fx:id="key5" prefHeight="23.0" prefWidth="Infinity" text="Label" textFill="WHITE" GridPane.rowIndex="4">
@@ -92,140 +105,251 @@
                     <Font name="Corbel Light" size="20.0" />
                 </font>
                <effect>
-                  <DropShadow />
+                  <DropShadow height="2.63" offsetY="3.0" radius="0.15749999999999997" width="0.0">
+                     <color>
+                        <Color red="0.1184210553765297" green="0.1184210553765297" blue="0.1184210553765297" />
+                     </color></DropShadow>
                </effect>
             </Label>
-            <Button mnemonicParsing="false" onAction="#copy1" prefHeight="68.0" prefWidth="187.0" text="Copy" GridPane.columnIndex="2">
-                <font>
-                    <Font name="Corbel Bold" size="31.0" />
-                </font>
-               <effect>
-                  <DropShadow />
-               </effect>
-               <graphic>
-                  <ImageView fitHeight="33.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@copy.png" />
-                     </image>
+            <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.hgrow="NEVER">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#clearKey1" prefHeight="46.0" prefWidth="62.0" style="-fx-background-radius: 34 0 0 34;" text="Clear">
+                     <font>
+                        <Font name="Corbel Bold" size="16.0" />
+                     </font>
                      <effect>
-                        <ColorAdjust brightness="1.0" />
+                        <DropShadow height="2.63" offsetY="3.0" radius="0.15749999999999997" width="0.0">
+                           <color>
+                              <Color red="0.1184210553765297" green="0.1184210553765297" blue="0.1184210553765297" />
+                           </color></DropShadow>
                      </effect>
-                  </ImageView>
-               </graphic></Button>
-            <Button mnemonicParsing="false" onAction="#copy2" prefHeight="68.0" prefWidth="187.0" text="Copy" GridPane.columnIndex="2" GridPane.rowIndex="1">
-               <font>
-                  <Font name="Corbel Bold" size="31.0" />
-               </font>
-               <effect>
-                  <DropShadow />
-               </effect>
-                <graphic>
-                    <ImageView fitHeight="33.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
-                        <image>
-                            <Image url="@copy.png" />
-                        </image>
-                        <effect>
-                            <ColorAdjust brightness="1.0" />
-                        </effect>
-                    </ImageView>
-                </graphic>
-            </Button>
-            <Button mnemonicParsing="false" onAction="#copy3" prefHeight="68.0" prefWidth="187.0" text="Copy" GridPane.columnIndex="2" GridPane.rowIndex="2">
-                <font>
-                    <Font name="Corbel Bold" size="31.0" />
-                </font>
-               <effect>
-                  <DropShadow />
-               </effect>
-                <graphic>
-                    <ImageView fitHeight="33.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
-                        <image>
-                            <Image url="@copy.png" />
-                        </image>
-                        <effect>
-                            <ColorAdjust brightness="1.0" />
-                        </effect>
-                    </ImageView>
-                </graphic>
-            </Button>
-            <Button mnemonicParsing="false" onAction="#copy4" prefHeight="68.0" prefWidth="187.0" text="Copy" GridPane.columnIndex="2" GridPane.rowIndex="3">
-                <font>
-                    <Font name="Corbel Bold" size="31.0" />
-                </font>
-               <effect>
-                  <DropShadow />
-               </effect>
-                <graphic>
-                    <ImageView fitHeight="33.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
-                        <image>
-                            <Image url="@copy.png" />
-                        </image>
-                        <effect>
-                            <ColorAdjust brightness="1.0" />
-                        </effect>
-                    </ImageView>
-                </graphic>
-            </Button>
-            <Button mnemonicParsing="false" onAction="#copy5" prefHeight="68.0" prefWidth="187.0" text="Copy" GridPane.columnIndex="2" GridPane.rowIndex="4">
-                <font>
-                    <Font name="Corbel Bold" size="31.0" />
-                </font>
-               <effect>
-                  <DropShadow />
-               </effect>
-                <graphic>
-                    <ImageView fitHeight="33.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
-                        <image>
-                            <Image url="@copy.png" />
-                        </image>
-                        <effect>
-                            <ColorAdjust brightness="1.0" />
-                        </effect>
-                    </ImageView>
-                </graphic>
-            </Button>
-          <Button mnemonicParsing="false" onAction="#addKey" prefHeight="68.0" prefWidth="110.0" text="Set" GridPane.columnIndex="1">
-              <font>
-                  <Font name="Corbel Bold" size="31.0" />
-              </font>
-               <effect>
-                  <DropShadow />
-               </effect></Button>
-            <Button mnemonicParsing="false" onAction="#addKey2" prefHeight="68.0" prefWidth="110.0" text="Set" GridPane.columnIndex="1" GridPane.rowIndex="1">
-               <font>
-                  <Font name="Corbel Bold" size="31.0" />
-               </font>
-               <effect>
-                  <DropShadow />
-               </effect></Button>
-            <Button mnemonicParsing="false" onAction="#addKey3" prefHeight="68.0" prefWidth="110.0" text="Set" GridPane.columnIndex="1" GridPane.rowIndex="2">
-                <font>
-                    <Font name="Corbel Bold" size="31.0" />
-                </font>
-               <effect>
-                  <DropShadow />
-               </effect></Button>
-            <Button mnemonicParsing="false" onAction="#addKey4" prefHeight="68.0" prefWidth="110.0" text="Set" GridPane.columnIndex="1" GridPane.rowIndex="3">
-                <font>
-                    <Font name="Corbel Bold" size="31.0" />
-                </font>
-               <effect>
-                  <DropShadow />
-               </effect></Button>
-            <Button mnemonicParsing="false" onAction="#addKey5" prefHeight="68.0" prefWidth="110.0" text="Set" GridPane.columnIndex="1" GridPane.rowIndex="4">
-                <font>
-                    <Font name="Corbel Bold" size="31.0" />
-                </font>
-               <effect>
-                  <DropShadow />
-               </effect></Button>
+                  </Button>
+                <Button mnemonicParsing="false" onAction="#addKey" prefHeight="46.0" prefWidth="64.0" text="Set">
+                    <font>
+                        <Font name="Corbel Bold" size="16.0" />
+                    </font>
+                     <effect>
+                        <DropShadow height="2.63" offsetY="3.0" radius="0.15749999999999997" width="0.0">
+                           <color>
+                              <Color red="0.1184210553765297" green="0.1184210553765297" blue="0.1184210553765297" />
+                           </color></DropShadow>
+                     </effect>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#copy1" prefHeight="46.0" prefWidth="92.0" style="-fx-background-radius: 0 34 34 0;" text="Copy">
+                      <font>
+                          <Font name="Corbel Bold" size="16.0" />
+                      </font>
+                     <effect>
+                        <DropShadow height="2.63" offsetY="3.0" radius="0.15749999999999997" width="0.0">
+                           <color>
+                              <Color red="0.1184210553765297" green="0.1184210553765297" blue="0.1184210553765297" />
+                           </color></DropShadow>
+                     </effect>
+                     <graphic>
+                        <ImageView fitHeight="25.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@copy.png" />
+                           </image>
+                           <effect>
+                              <ColorAdjust brightness="1.0" />
+                           </effect>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#clearKey2" prefHeight="46.0" prefWidth="62.0" style="-fx-background-radius: 34 0 0 34;" text="Clear">
+                     <font>
+                        <Font name="Corbel Bold" size="16.0" />
+                     </font>
+                     <effect>
+                        <DropShadow height="2.63" offsetY="3.0" radius="0.15749999999999997" width="0.0">
+                           <color>
+                              <Color red="0.1184210553765297" green="0.1184210553765297" blue="0.1184210553765297" />
+                           </color></DropShadow>
+                     </effect>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#addKey2" prefHeight="46.0" prefWidth="64.0" text="Set">
+                     <font>
+                        <Font name="Corbel Bold" size="16.0" />
+                     </font>
+                     <effect>
+                        <DropShadow height="2.63" offsetY="3.0" radius="0.15749999999999997" width="0.0">
+                           <color>
+                              <Color red="0.1184210553765297" green="0.1184210553765297" blue="0.1184210553765297" />
+                           </color></DropShadow>
+                     </effect>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#copy2" prefHeight="46.0" prefWidth="92.0" style="-fx-background-radius: 0 34 34 0;" text="Copy">
+                     <font>
+                        <Font name="Corbel Bold" size="16.0" />
+                     </font>
+                     <effect>
+                        <DropShadow height="2.63" offsetY="3.0" radius="0.15749999999999997" width="0.0">
+                           <color>
+                              <Color red="0.1184210553765297" green="0.1184210553765297" blue="0.1184210553765297" />
+                           </color></DropShadow>
+                     </effect>
+                      <graphic>
+                          <ImageView fitHeight="25.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                              <image>
+                                  <Image url="@copy.png" />
+                              </image>
+                              <effect>
+                                  <ColorAdjust brightness="1.0" />
+                              </effect>
+                          </ImageView>
+                      </graphic>
+                  </Button>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#clearKey3" prefHeight="46.0" prefWidth="62.0" style="-fx-background-radius: 34 0 0 34;" text="Clear">
+                     <font>
+                        <Font name="Corbel Bold" size="16.0" />
+                     </font>
+                     <effect>
+                        <DropShadow height="2.63" offsetY="3.0" radius="0.15749999999999997" width="0.0">
+                           <color>
+                              <Color red="0.1184210553765297" green="0.1184210553765297" blue="0.1184210553765297" />
+                           </color></DropShadow>
+                     </effect>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#addKey3" prefHeight="46.0" prefWidth="64.0" text="Set">
+                      <font>
+                          <Font name="Corbel Bold" size="16.0" />
+                      </font>
+                     <effect>
+                        <DropShadow height="2.63" offsetY="3.0" radius="0.15749999999999997" width="0.0">
+                           <color>
+                              <Color red="0.1184210553765297" green="0.1184210553765297" blue="0.1184210553765297" />
+                           </color></DropShadow>
+                     </effect>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#copy3" prefHeight="46.0" prefWidth="92.0" style="-fx-background-radius: 0 34 34 0;" text="Copy">
+                      <font>
+                          <Font name="Corbel Bold" size="16.0" />
+                      </font>
+                     <effect>
+                        <DropShadow height="2.63" offsetY="3.0" radius="0.15749999999999997" width="0.0">
+                           <color>
+                              <Color red="0.1184210553765297" green="0.1184210553765297" blue="0.1184210553765297" />
+                           </color></DropShadow>
+                     </effect>
+                      <graphic>
+                          <ImageView fitHeight="25.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                              <image>
+                                  <Image url="@copy.png" />
+                              </image>
+                              <effect>
+                                  <ColorAdjust brightness="1.0" />
+                              </effect>
+                          </ImageView>
+                      </graphic>
+                  </Button>
+               </children></HBox>
+            <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#clearKey4" prefHeight="46.0" prefWidth="62.0" style="-fx-background-radius: 34 0 0 34;" text="Clear">
+                     <font>
+                        <Font name="Corbel Bold" size="16.0" />
+                     </font>
+                     <effect>
+                        <DropShadow height="2.63" offsetY="3.0" radius="0.15749999999999997" width="0.0">
+                           <color>
+                              <Color red="0.1184210553765297" green="0.1184210553765297" blue="0.1184210553765297" />
+                           </color></DropShadow>
+                     </effect>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#addKey4" prefHeight="46.0" prefWidth="64.0" text="Set">
+                      <font>
+                          <Font name="Corbel Bold" size="16.0" />
+                      </font>
+                     <effect>
+                        <DropShadow height="2.63" offsetY="3.0" radius="0.15749999999999997" width="0.0">
+                           <color>
+                              <Color red="0.1184210553765297" green="0.1184210553765297" blue="0.1184210553765297" />
+                           </color></DropShadow>
+                     </effect>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#copy4" prefHeight="46.0" prefWidth="92.0" style="-fx-background-radius: 0 34 34 0;" text="Copy">
+                      <font>
+                          <Font name="Corbel Bold" size="16.0" />
+                      </font>
+                     <effect>
+                        <DropShadow height="2.63" offsetY="3.0" radius="0.15749999999999997" width="0.0">
+                           <color>
+                              <Color red="0.1184210553765297" green="0.1184210553765297" blue="0.1184210553765297" />
+                           </color></DropShadow>
+                     </effect>
+                      <graphic>
+                          <ImageView fitHeight="25.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                              <image>
+                                  <Image url="@copy.png" />
+                              </image>
+                              <effect>
+                                  <ColorAdjust brightness="1.0" />
+                              </effect>
+                          </ImageView>
+                      </graphic>
+                  </Button>
+               </children></HBox>
+            <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#clearKey5" prefHeight="46.0" prefWidth="62.0" style="-fx-background-radius: 34 0 0 34;" text="Clear">
+                     <font>
+                        <Font name="Corbel Bold" size="16.0" />
+                     </font>
+                     <effect>
+                        <DropShadow height="2.63" offsetY="3.0" radius="0.15749999999999997" width="0.0">
+                           <color>
+                              <Color red="0.1184210553765297" green="0.1184210553765297" blue="0.1184210553765297" />
+                           </color></DropShadow>
+                     </effect>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#addKey5" prefHeight="46.0" prefWidth="64.0" text="Set">
+                      <font>
+                          <Font name="Corbel Bold" size="16.0" />
+                      </font>
+                     <effect>
+                        <DropShadow height="2.63" offsetY="3.0" radius="0.15749999999999997" width="0.0">
+                           <color>
+                              <Color red="0.1184210553765297" green="0.1184210553765297" blue="0.1184210553765297" />
+                           </color></DropShadow>
+                     </effect>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#copy5" prefHeight="46.0" prefWidth="92.0" style="-fx-background-radius: 0 34 34 0;" text="Copy">
+                      <font>
+                          <Font name="Corbel Bold" size="16.0" />
+                      </font>
+                     <effect>
+                        <DropShadow height="2.63" offsetY="3.0" radius="0.15749999999999997" width="0.0">
+                           <color>
+                              <Color red="0.1184210553765297" green="0.1184210553765297" blue="0.1184210553765297" />
+                           </color></DropShadow>
+                     </effect>
+                      <graphic>
+                          <ImageView fitHeight="25.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                              <image>
+                                  <Image url="@copy.png" />
+                              </image>
+                              <effect>
+                                  <ColorAdjust brightness="1.0" />
+                              </effect>
+                          </ImageView>
+                      </graphic>
+                  </Button>
+               </children></HBox>
          </children>
       </GridPane>
    </center>
    <bottom>
-      <Label alignment="CENTER" prefHeight="68.0" prefWidth="212.0" style="-fx-padding: 0; -fx-background-color: transparent;" text="By Calm Matt" textFill="WHITE" BorderPane.alignment="CENTER">
+      <Label alignment="CENTER" prefHeight="39.0" prefWidth="198.0" style="-fx-padding: 0; -fx-background-color: transparent;" text="Version: Alpha 0.3" textFill="WHITE" BorderPane.alignment="CENTER">
          <font>
-            <Font name="Corbel Light" size="21.0" />
+            <Font name="Corbel Light" size="14.0" />
          </font>
       </Label>
    </bottom>
