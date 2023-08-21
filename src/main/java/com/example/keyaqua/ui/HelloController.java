@@ -648,6 +648,22 @@ public class HelloController implements Initializable {
         Optional<ButtonType> respons = alertDialog.showAndWait();
     }
 
+    public void unlockPage(){
+        Alert alertDialog = new Alert(Alert.AlertType.INFORMATION);
+        ImageView logo = new ImageView("/com/example/keyaqua/6676583.png");
+        logo.setFitWidth(100);
+        logo.setFitHeight(100);
+        alertDialog.setGraphic(logo);
+        alertDialog.setTitle("Unlock");
+        alertDialog.setHeaderText("This feature is currently under development");
+        alertDialog.setContentText("Check out the git page: https://github.com/mattkje/KeyAqua");
+        DialogPane dialogPane = alertDialog.getDialogPane();
+        dialogPane.getStylesheets().add(Objects.requireNonNull(getClass().getResource("/com/example/keyaqua/alert.css")).toExternalForm());
+        dialogPane.getStyleClass().add("custom-alert-dialog");
+        alertDialog.getDialogPane().lookup(".header-panel").setStyle("-fx-background-color: #3d3d3d;");
+        Optional<ButtonType> respons = alertDialog.showAndWait();
+    }
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         refresh();
