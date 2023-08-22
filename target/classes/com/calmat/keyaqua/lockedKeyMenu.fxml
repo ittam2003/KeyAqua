@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane fx:id="bg" prefHeight="600" prefWidth="1000" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.calmat.keyaqua.ui.LockedController">
+   <bottom>
+      <Label alignment="CENTER" prefHeight="39.0" prefWidth="198.0" style="-fx-padding: 0; -fx-background-color: transparent;" text="Version: 0.0.4" textFill="WHITE" BorderPane.alignment="CENTER">
+         <font>
+            <Font name="Corbel Light" size="14.0" />
+         </font>
+      </Label>
+   </bottom>
+   <center>
+       <VBox alignment="CENTER" maxHeight="400.0" maxWidth="400.0" prefHeight="400.0" prefWidth="400.0" style="-fx-background-color: #070707; -fx-background-radius: 30; -fx-spacing: 20;">
+         <VBox alignment="CENTER" prefHeight="91.0" prefWidth="400.0">
+            <children>
+               <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                  <children>
+                     <ImageView fitHeight="59.0" fitWidth="63.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                           <Image url="@images/6676583.png" />
+                        </image>
+                     </ImageView>
+                     <Label style="-fx-background-color: transparent; -fx-padding: 0;" text="KeyAqua" textFill="WHITE">
+                        <font>
+                           <Font name="Corbel Bold" size="43.0" />
+                        </font>
+                     </Label>
+                  </children>
+               </HBox>
+               <Label alignment="CENTER" contentDisplay="CENTER" style="-fx-background-color: transparent; -fx-padding: 0;" text="KeyAqua is locked" textFill="WHITE">
+                  <font>
+                     <Font name="Corbel Light" size="18.0" />
+                  </font>
+               </Label>
+            </children>
+         </VBox>
+         <Label fx:id="errorMessage" style="-fx-background-color: transparent; -fx-padding: 0;" textFill="#f50000">
+            <font>
+               <Font name="Corbel Light" size="13.0" />
+            </font></Label>
+         <PasswordField fx:id="passwordField" maxWidth="244.0" prefHeight="44.0" prefWidth="244.0" promptText="Password" style="-fx-background-radius: 20; -fx-background-color: white;" />
+         <Button fx:id="passwordButton" mnemonicParsing="false" onAction="#password" prefHeight="28.0" prefWidth="92.0" style="-fx-background-radius: 15;" text="Unlock">
+            <effect>
+               <DropShadow height="0.0" offsetY="1.0" radius="0.0" width="0.0" />
+            </effect></Button>
+         <effect>
+            <DropShadow />
+         </effect>
+       </VBox>
+   </center>
+</BorderPane>
