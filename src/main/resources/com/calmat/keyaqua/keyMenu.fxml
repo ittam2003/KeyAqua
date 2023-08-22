@@ -7,7 +7,7 @@
 <?import javafx.scene.paint.*?>
 <?import javafx.scene.text.*?>
 
-<BorderPane fx:id="bg" prefHeight="600" prefWidth="1000" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.keyaqua.ui.HelloController">
+<BorderPane fx:id="bg" prefHeight="600" prefWidth="1000" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.calmat.keyaqua.ui.HelloController">
     <VBox>
         <Button>
 
@@ -18,7 +18,7 @@
         <items>
             <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@6676583.png" />
+                  <Image url="@images/6676583.png" />
                </image>
             </ImageView>
             <Label style="-fx-background-color: transparent; -fx-padding: 0;" text="KeyAqua" textFill="WHITE">
@@ -35,11 +35,12 @@
             <font>
                <Font name="Corbel Bold" size="12.0" />
             </font></Button>
-         <Button mnemonicParsing="false" onAction="#unlockPage" prefHeight="46.0" prefWidth="57.0" style="-fx-background-radius: 15;" text="Unlock">
+         <Button mnemonicParsing="false" onAction="#changePassword" prefHeight="46.0" prefWidth="115.0" style="-fx-background-radius: 15;" text="Change password">
             <font>
                <Font name="Corbel Bold" size="12.0" />
             </font>
          </Button>
+         <Button fx:id="lockButton" mnemonicParsing="false" onAction="#lock" prefHeight="46.0" prefWidth="52.0" style="-fx-background-radius: 15;" text="Lock" />
       </ToolBar>
    </top>
    <bottom>
@@ -116,7 +117,7 @@
                      <graphic>
                         <ImageView fitHeight="25.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@copy.png" />
+                              <Image url="@images/copy.png" />
                            </image>
                            <effect>
                               <ColorAdjust brightness="1.0" />
@@ -191,7 +192,7 @@
                       <graphic>
                           <ImageView fitHeight="25.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
                               <image>
-                                  <Image url="@copy.png" />
+                                  <Image url="@images/copy.png" />
                               </image>
                               <effect>
                                   <ColorAdjust brightness="1.0" />
@@ -266,7 +267,7 @@
                       <graphic>
                           <ImageView fitHeight="25.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
                               <image>
-                                  <Image url="@copy.png" />
+                                  <Image url="@images/copy.png" />
                               </image>
                               <effect>
                                   <ColorAdjust brightness="1.0" />
@@ -341,7 +342,7 @@
                       <graphic>
                           <ImageView fitHeight="25.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
                               <image>
-                                  <Image url="@copy.png" />
+                                  <Image url="@images/copy.png" />
                               </image>
                               <effect>
                                   <ColorAdjust brightness="1.0" />
@@ -416,7 +417,7 @@
                       <graphic>
                           <ImageView fitHeight="25.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
                               <image>
-                                  <Image url="@copy.png" />
+                                  <Image url="@images/copy.png" />
                               </image>
                               <effect>
                                   <ColorAdjust brightness="1.0" />

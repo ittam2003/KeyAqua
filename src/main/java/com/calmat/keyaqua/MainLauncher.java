@@ -1,7 +1,7 @@
-package com.example.keyaqua;
+package com.calmat.keyaqua;
 
 
-import com.example.keyaqua.ui.HelloApplication;
+import com.calmat.keyaqua.ui.HelloApplication;
 
 public class MainLauncher {
     public static void main(String[] args) {
