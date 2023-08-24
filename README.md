@@ -11,7 +11,8 @@ it from the release section.
 ## Screenshots
 
 <div style="display:flex;">
-    <img src="https://github.com/mattkje/KeyAqua/blob/main/src/main/resources/com/example/keyaqua/screenshot1.png?raw=true" width="50%">
+    <img src="https://github.com/mattkje/KeyAqua/blob/main/src/main/resources/com/calmat/keyaqua/images/scrnsht1.png?raw=true" width="50%">
+    <img src="https://github.com/mattkje/KeyAqua/blob/main/src/main/resources/com/calmat/keyaqua/images/scrnsht2.png?raw=true" width="50%">
 </div>
 
 
