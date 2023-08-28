@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane fx:id="bg" prefHeight="600" prefWidth="1000" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.calmat.keyaqua.ui.KeyMenuController">
+    <VBox>
+        <Button onAction="#addKey">
+
+        </Button>
+    </VBox>
+   <top>
+      <ToolBar nodeOrientation="RIGHT_TO_LEFT" prefHeight="37.0" prefWidth="1000.0" style="-fx-background-color: #0e0e0e;" BorderPane.alignment="CENTER">
+         <effect>
+            <DropShadow height="38.59" radius="9.1475" width="0.0" />
+         </effect>
+         <MenuButton contentDisplay="RIGHT" mnemonicParsing="false" style="-fx-background-color: transparent; -fx-padding: 0;" textFill="WHITE">
+           <items>
+             <MenuItem mnemonicParsing="false" onAction="#aboutPage" style="-fx-text-fill: white;" text="About">
+               </MenuItem>
+             <MenuItem mnemonicParsing="false" onAction="#lock" style="-fx-text-fill: white;" text="Lock">
+               </MenuItem>
+               <MenuItem mnemonicParsing="false" onAction="#genBackupKey" style="-fx-text-fill: white;" text="Generate backup key">
+               </MenuItem>
+               <MenuItem mnemonicParsing="false" onAction="#changePassword" style="-fx-text-fill: white;" text="Change password">
+               </MenuItem>
+           </items>
+            <graphic>
+               <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                     <Image url="@../images/menu.png" />
+                  </image>
+                  <effect>
+                     <ColorAdjust brightness="1.0" />
+                  </effect>
+               </ImageView>
+            </graphic>
+         </MenuButton>
+         <TextField maxWidth="213.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="21.0" prefWidth="200.0" promptText="Search" style="-fx-background-color: #fff; -fx-background-radius: 20;">
+            <font>
+               <Font name="Segoe UI Light" size="12.0" />
+            </font></TextField>
+      </ToolBar>
+   </top>
+   <center>
+      <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+        <tabs>
+          <Tab text="Key Chain">
+            <content>
+                <ListView fx:id="keyList" style="-fx-background-color: #151515; -fx-padding: 20; -fx-border-color: black; -fx-border-width: 1;" />
+            </content>
+          </Tab>
+            <Tab text="Coming soon">
+                <content>
+                </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </center>
+   <left>
+      <VBox alignment="CENTER" prefHeight="563.0" prefWidth="222.0" style="-fx-background-color: rgba(0,0,0,0.47); -fx-padding: 20;" BorderPane.alignment="CENTER">
+         <children>
+            <Button mnemonicParsing="false" onAction="#addKey" prefHeight="41.0" prefWidth="147.0" text="Add key" textFill="WHITE">
+               <font>
+                  <Font name="Segoe UI Semilight" size="18.0" />
+               </font>
+            </Button>
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" VBox.vgrow="ALWAYS">
+               <children>
+                  <ImageView fitHeight="144.0" fitWidth="132.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/safe.png" />
+                     </image>
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </ImageView>
+               </children>
+            </VBox>
+            <Label text="Info" textFill="WHITE">
+               <font>
+                  <Font name="Segoe UI Light" size="30.0" />
+               </font>
+            </Label>
+            <HBox alignment="CENTER_LEFT" prefHeight="34.0" prefWidth="222.0">
+               <children>
+                  <Label style="-fx-padding: 10;" text="Name:" textFill="WHITE">
+                     <font>
+                        <Font name="Segoe UI Semilight" size="14.0" />
+                     </font></Label>
+                  <Label fx:id="selectedKeyLabel" text="No key selected" textFill="WHITE">
+                     <font>
+                        <Font name="Segoe UI Semilight" size="13.0" />
+                     </font></Label>
+               </children>
+            </HBox>
+            <Label text="Key options" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Segoe UI Light" size="30.0" />
+               </font>
+            </Label>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" style="-fx-spacing: 20;">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#deleteKey" prefHeight="32.0" prefWidth="70.0" style="-fx-background-color: transparent;" text="Delete" textFill="WHITE">
+                     <font>
+                        <Font name="Segoe UI Semilight" size="15.0" />
+                     </font></Button>
+                  <Button mnemonicParsing="false" onAction="#copy" prefHeight="31.0" prefWidth="58.0" style="-fx-background-color: transparent;" text="Copy" textFill="WHITE">
+                     <font>
+                        <Font name="Segoe UI Semilight" size="15.0" />
+                     </font></Button>
+               </children>
+            </HBox>
+         </children></VBox>
+   </left>
+</BorderPane>
