@@ -129,7 +129,7 @@
     -fx-font-size: 14px;
     -fx-background-color: #1e1e1e;
     -fx-padding: 10;
-    -fx-pref-width: 150;
+    -fx-pref-width: 200;
 }
 
 .context-menu .menu-item {
@@ -137,10 +137,18 @@
 }
 
 .context-menu .menu-item:focused {
-    -fx-background-color: #eadc45; /* Blue */
+    -fx-background-color: #ffcd02; /* Blue */
 }
 
 .context-menu .menu-item:selected {
     -fx-background-color: #1e1e1e; /* Light Gray */
+}
+
+#backupKeyBox {
+    -fx-background-color: #1f1f1f;
+}
+
+.text {
+    -fx-fill: white;
 }
 

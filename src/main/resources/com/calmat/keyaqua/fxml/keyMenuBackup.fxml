@@ -18,7 +18,7 @@
         <items>
             <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@images/6676583.png" />
+                  <Image url="@../images/6676583.png" />
                </image>
             </ImageView>
             <Label style="-fx-background-color: transparent; -fx-padding: 0;" text="KeyAqua" textFill="WHITE">
@@ -117,7 +117,7 @@
                      <graphic>
                         <ImageView fitHeight="25.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@images/copy.png" />
+                              <Image url="@../images/copy.png" />
                            </image>
                            <effect>
                               <ColorAdjust brightness="1.0" />
@@ -192,7 +192,7 @@
                       <graphic>
                           <ImageView fitHeight="25.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
                               <image>
-                                  <Image url="@images/copy.png" />
+                                  <Image url="@../images/copy.png" />
                               </image>
                               <effect>
                                   <ColorAdjust brightness="1.0" />
@@ -267,7 +267,7 @@
                       <graphic>
                           <ImageView fitHeight="25.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
                               <image>
-                                  <Image url="@images/copy.png" />
+                                  <Image url="@../images/copy.png" />
                               </image>
                               <effect>
                                   <ColorAdjust brightness="1.0" />
@@ -342,7 +342,7 @@
                       <graphic>
                           <ImageView fitHeight="25.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
                               <image>
-                                  <Image url="@images/copy.png" />
+                                  <Image url="@../images/copy.png" />
                               </image>
                               <effect>
                                   <ColorAdjust brightness="1.0" />
@@ -417,7 +417,7 @@
                       <graphic>
                           <ImageView fitHeight="25.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
                               <image>
-                                  <Image url="@images/copy.png" />
+                                  <Image url="@../images/copy.png" />
                               </image>
                               <effect>
                                   <ColorAdjust brightness="1.0" />

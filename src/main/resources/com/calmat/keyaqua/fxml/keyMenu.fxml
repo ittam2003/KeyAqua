@@ -23,13 +23,15 @@
                </MenuItem>
              <MenuItem mnemonicParsing="false" onAction="#lock" style="-fx-text-fill: white;" text="Lock">
                </MenuItem>
+               <MenuItem mnemonicParsing="false" onAction="#genBackupKey" style="-fx-text-fill: white;" text="Generate backup key">
+               </MenuItem>
                <MenuItem mnemonicParsing="false" onAction="#changePassword" style="-fx-text-fill: white;" text="Change password">
                </MenuItem>
            </items>
             <graphic>
                <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
                   <image>
-                     <Image url="@images/menu.png" />
+                     <Image url="@../images/menu.png" />
                   </image>
                   <effect>
                      <ColorAdjust brightness="1.0" />
@@ -70,7 +72,7 @@
                <children>
                   <ImageView fitHeight="144.0" fitWidth="132.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@images/safe.png" />
+                        <Image url="@../images/safe.png" />
                      </image>
                      <effect>
                         <DropShadow />

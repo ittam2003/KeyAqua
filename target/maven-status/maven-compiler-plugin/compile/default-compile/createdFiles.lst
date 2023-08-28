@@ -1,8 +1,10 @@
 com\calmat\keyaqua\Logic\Key$KeyBuilder.class
+com\calmat\keyaqua\MainLauncher.class
 com\calmat\keyaqua\Logic\User.class
-com\calmat\keyaqua\Logic\KeyGeneration.class
-com\calmat\keyaqua\fileHandling\FileToKey.class
+com\calmat\keyaqua\ui\LockedController.class
+com\calmat\keyaqua\ui\NewUserController.class
 com\calmat\keyaqua\ui\KeyAquaApplication.class
+com\calmat\keyaqua\Logic\Database.class
 com\calmat\keyaqua\Logic\KeyChain.class
 com\calmat\keyaqua\ui\KeyMenuController.class
 com\calmat\keyaqua\ui\KeyMenuController$1.class

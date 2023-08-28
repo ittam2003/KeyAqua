@@ -1,10 +1,9 @@
-C:\Users\matti\IdeaProjects\KeyAqua3\src\main\java\com\calmat\keyaqua\Logic\Key.java
-C:\Users\matti\IdeaProjects\KeyAqua3\src\main\java\com\calmat\keyaqua\ui\KeyAquaApplication.java
-C:\Users\matti\IdeaProjects\KeyAqua3\src\main\java\com\calmat\keyaqua\Logic\KeyChain.java
-C:\Users\matti\IdeaProjects\KeyAqua3\src\main\java\com\calmat\keyaqua\Logic\Database.java
-C:\Users\matti\IdeaProjects\KeyAqua3\src\main\java\com\calmat\keyaqua\MainLauncher.java
-C:\Users\matti\IdeaProjects\KeyAqua3\src\main\java\com\calmat\keyaqua\ui\KeyMenuController.java
-C:\Users\matti\IdeaProjects\KeyAqua3\src\main\java\com\calmat\keyaqua\Logic\User.java
-C:\Users\matti\IdeaProjects\KeyAqua3\src\main\java\com\calmat\keyaqua\fileHandling\FileToKey.java
-C:\Users\matti\IdeaProjects\KeyAqua3\src\main\java\com\calmat\keyaqua\Logic\KeyGeneration.java
-C:\Users\matti\IdeaProjects\KeyAqua3\src\main\java\com\calmat\keyaqua\ui\LockedController.java
+A:\Users\matti\Programming\Java Projects\KeyAqua\src\main\java\com\calmat\keyaqua\Logic\Key.java
+A:\Users\matti\Programming\Java Projects\KeyAqua\src\main\java\com\calmat\keyaqua\ui\NewUserController.java
+A:\Users\matti\Programming\Java Projects\KeyAqua\src\main\java\com\calmat\keyaqua\ui\KeyAquaApplication.java
+A:\Users\matti\Programming\Java Projects\KeyAqua\src\main\java\com\calmat\keyaqua\MainLauncher.java
+A:\Users\matti\Programming\Java Projects\KeyAqua\src\main\java\com\calmat\keyaqua\Logic\KeyChain.java
+A:\Users\matti\Programming\Java Projects\KeyAqua\src\main\java\com\calmat\keyaqua\ui\KeyMenuController.java
+A:\Users\matti\Programming\Java Projects\KeyAqua\src\main\java\com\calmat\keyaqua\Logic\Database.java
+A:\Users\matti\Programming\Java Projects\KeyAqua\src\main\java\com\calmat\keyaqua\ui\LockedController.java
+A:\Users\matti\Programming\Java Projects\KeyAqua\src\main\java\com\calmat\keyaqua\Logic\User.java

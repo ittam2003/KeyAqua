@@ -12,9 +12,13 @@ import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
+import javafx.scene.media.MediaView;
 import javafx.util.Duration;
 import java.io.IOException;
 import java.net.URL;
+import java.util.Objects;
 import java.util.ResourceBundle;
 
 public class LockedController implements Initializable {
@@ -47,6 +51,24 @@ public class LockedController implements Initializable {
         }
     }
 
+    public void createNewUser(){
+        KeyAquaApplication m = new KeyAquaApplication();
+        try {
+            m.changeScene("newUserMenu.fxml");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public void forgottenPassword(){
+        KeyAquaApplication m = new KeyAquaApplication();
+        try {
+            m.changeScene("resetPasswordMenu.fxml");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
     public void unlock() {
         KeyAquaApplication m = new KeyAquaApplication();
         try {
@@ -54,6 +76,23 @@ public class LockedController implements Initializable {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    @FXML
+    private MediaView mediaPlayer;
+
+    public void getLoadingVideo() {
+
+        Media media = new Media(
+                Objects.requireNonNull(getClass().getResource("/com/calmat/keyaqua/media/background.mp4"))
+                        .toString());
+        MediaPlayer player = new MediaPlayer(media);
+        mediaPlayer.setMediaPlayer(player);
+        player.setOnEndOfMedia(() -> {
+            player.seek(Duration.ZERO);
+        });
+        player.play();
+
     }
 
     @FXML
@@ -75,6 +114,7 @@ public class LockedController implements Initializable {
         fade.setFromValue(0);
         fade.setToValue(1);
         fade.play();
+        getLoadingVideo();
 
     }
 }

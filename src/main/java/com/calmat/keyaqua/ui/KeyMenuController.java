@@ -9,7 +9,6 @@ import java.util.Objects;
 
 import com.calmat.keyaqua.Logic.Key;
 import com.calmat.keyaqua.Logic.KeyChain;
-import com.calmat.keyaqua.fileHandling.FileToKey;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
@@ -24,12 +23,18 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.Clipboard;
 import javafx.scene.input.ClipboardContent;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.Priority;
+import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 import java.net.URL;
 import java.util.Optional;
 import java.util.ResourceBundle;
+
+import static javafx.scene.paint.Color.WHITE;
 
 public class KeyMenuController implements Initializable {
 
@@ -108,6 +113,7 @@ public class KeyMenuController implements Initializable {
 
         // Create a new Scene with the GridPane as the root node
         Scene scene = new Scene(gridPane);
+        scene.getStylesheets().add(Objects.requireNonNull(this.getClass().getResource("/com/calmat/keyaqua/themes/popUp.css")).toExternalForm());
 
         // Create a new Stage to hold the Scene
         Stage popupStage = new Stage();
@@ -253,6 +259,7 @@ public class KeyMenuController implements Initializable {
 
         gridPane.add(submitButton, 1, 6);
         Scene scene = new Scene(gridPane);
+        scene.getStylesheets().add(Objects.requireNonNull(this.getClass().getResource("/com/calmat/keyaqua/themes/popUp.css")).toExternalForm());
         Stage popupStage = new Stage();
         popupStage.setScene(scene);
         popupStage.setTitle("Password");
@@ -268,6 +275,67 @@ public class KeyMenuController implements Initializable {
             throw new RuntimeException(e);
         }
     }
+
+    public void genBackupKey(){
+        VBox vbox = new VBox();
+        vbox.setId("backupKeyBox");
+        vbox.setPrefSize(300, 150);
+        vbox.setSpacing(10);
+        vbox.setPadding(new Insets(10));
+
+        Text info = new Text("This key can be used to restore your password should you lose it. " +
+                "Make sure you copy, and store this key in a safe location");
+        info.setFill(WHITE);
+        info.setWrappingWidth(300);
+
+
+        TextField backupKeyText = new TextField();
+        backupKeyText.setEditable(false);
+        HBox hbox = new HBox(new Label("Generated key:"),backupKeyText);
+        hbox.setSpacing(10);
+
+
+        Button submitButton = new Button("Generate key");
+        submitButton.setOnAction(event1 -> {
+            Database database = new Database();
+            if(database.checkIfKeyExists()){
+                vbox.getChildren().remove(hbox);
+                info.setText("Key already exists! If you have lost your original key, you will not be able to generate a new one." +
+                        " This is for security purposes");
+                submitButton.setText("No key was generated");
+
+            } else {
+                String backupKey = Database.generatePassword();
+                backupKeyText.setText(backupKey);
+                try {
+                    database.addBackupKey(database.getActiveUserAsString(), backupKey);
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
+            }
+
+        });
+        Button closeButton = new Button("Close");
+        HBox growBox =  new HBox();
+        HBox.setHgrow(growBox, Priority.ALWAYS);
+        HBox buttonBox = new HBox(closeButton,growBox, submitButton);
+        buttonBox.setSpacing(10);
+        vbox.getChildren().addAll(info,hbox,buttonBox);
+        Scene scene = new Scene(vbox);
+        scene.getStylesheets().add(Objects.requireNonNull(this.getClass().getResource("/com/calmat/keyaqua/themes/popUp.css")).toExternalForm());
+        Stage popupStage = new Stage();
+        popupStage.setScene(scene);
+        popupStage.setTitle("Password");
+        popupStage.setResizable(false);
+        popupStage.show();
+
+
+        closeButton.setOnAction(event1 -> {
+            popupStage.close();
+        });
+
+    }
+
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {

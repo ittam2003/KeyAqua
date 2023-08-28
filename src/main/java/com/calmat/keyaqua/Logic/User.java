@@ -6,9 +6,12 @@ public class User {
 
     private String password;
 
+    private String backupKey;
+
     public User(String username, String password){
         this.username = username;
         this.password = password;
+        this.backupKey = "";
     }
 
     public String getUsername(){
@@ -19,11 +22,19 @@ public class User {
         return this.password;
     }
 
+    public String getBackupKey(){
+        return this.backupKey;
+    }
+
     public void setUsername(){
         this.username = username;
     }
 
     public void setPassword(){
         this.password = password;
+    }
+
+    public void setBackupKey(){
+        this.backupKey = backupKey;
     }
 }

@@ -1,6 +1,6 @@
 *{
-    -fx-primary-color: #282828;
-    -fx-secondary-color: #181818;
+    -fx-primary-color: #bbbbbb;
+    -fx-secondary-color: #efefef;
     -fx-custom-color: financeColorString;
 
     -fx-focus-color: -fx-secondary-color;
@@ -9,25 +9,25 @@
 
 
 #bg{
-    -fx-background-color: #151515;
+    -fx-background-color: #ffffff;
 }
 
 
 .button{
     -fx-background-color: transparent;
-    -fx-border-color: #fff;
-    -fx-text-fill: white;
+    -fx-border-color: #000000;
+    -fx-text-fill: #000000;
     -fx-border-radius: 20px;
 }
 
 .button:hover{
-    -fx-border-color: #b2b2b2;
-    -fx-text-fill: #b2b2b2;
+    -fx-border-color: #232323;
+    -fx-text-fill: #232323;
 }
 
 .button:pressed{
-    -fx-border-color: #696969;
-    -fx-text-fill: #696969;
+    -fx-border-color: #343434;
+    -fx-text-fill: #343434;
 }
 
 #createNew{
@@ -61,24 +61,24 @@
 }
 
 .list-cell:filled:selected:focused, .list-cell:filled:selected {
-    -fx-background-color: #000000;
+    -fx-background-color: #ffffff;
     -fx-background-radius: 25;
-    -fx-text-fill: #ffffff;
+    -fx-text-fill: #000000;
 
 }
 
 .list-cell {
-    -fx-cell-hover-color: #1f1f1f;
-    -fx-background-color: #151515;
-    -fx-text-fill: #ffffff;
+    -fx-cell-hover-color: #252525;
+    -fx-background-color: #ffffff;
+    -fx-text-fill: #000000;
     -fx-font-size: 30;
     -fx-font-family: "Segoe UI Semibold";
     -fx-label-padding: 20;
 }
 
 .list-cell:filled:hover {
-    -fx-cell-hover-color: #282828;
-    -fx-text-fill: #ffffff;
+    -fx-cell-hover-color: #d3d3d3;
+    -fx-text-fill: #000000;
 }
 
 .list-view .scroll-bar:vertical {
@@ -100,7 +100,7 @@
 }
 .tab .tab-label {
     -fx-alignment: CENTER;
-    -fx-text-fill: white;
+    -fx-text-fill: #000000;
     -fx-font-weight: bold;
     -fx-padding: 0 10 0 10;
 }
