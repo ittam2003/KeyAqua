@@ -62,9 +62,9 @@
                <Cursor fx:constant="HAND" />
             </cursor>
          </Button>
-         <Label alignment="CENTER" prefHeight="39.0" prefWidth="198.0" style="-fx-padding: 0; -fx-background-color: transparent;" text="Version: 0.0.5" textFill="WHITE">
+         <Label alignment="CENTER" prefHeight="39.0" prefWidth="198.0" style="-fx-padding: 0; -fx-background-color: transparent;" text="Version: 0.1.0.PR" textFill="WHITE">
             <font>
-               <Font name="Corbel Light" size="14.0" />
+               <Font name="Segoe UI Light" size="11.0" />
             </font>
          </Label>
          <effect>
