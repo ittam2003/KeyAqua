@@ -45,9 +45,11 @@ public class LockedController implements Initializable {
                     throw new RuntimeException(e);
                 }
                 unlock();
+            }else {
+                errorMessage.setText("Wrong username/password...");
             }
         }else {
-            errorMessage.setText("Wrong username/password...");
+            errorMessage.setText("Please fill all fields");
         }
     }
 

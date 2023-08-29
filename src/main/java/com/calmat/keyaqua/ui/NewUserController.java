@@ -3,15 +3,28 @@ package com.calmat.keyaqua.ui;
 import com.calmat.keyaqua.Logic.Database;
 import com.calmat.keyaqua.Logic.Key;
 import com.calmat.keyaqua.Logic.User;
+import javafx.animation.Animation;
+import javafx.animation.FadeTransition;
+import javafx.animation.Interpolator;
+import javafx.animation.TranslateTransition;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.image.ImageView;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
+import javafx.scene.media.MediaView;
+import javafx.util.Duration;
 
 import java.io.IOException;
+import java.net.URL;
+import java.util.Objects;
+import java.util.ResourceBundle;
 
-public class NewUserController {
+public class NewUserController implements Initializable {
 
     @FXML
     private PasswordField newPasswordField1;
@@ -115,4 +128,45 @@ public class NewUserController {
             throw new RuntimeException(e);
         }
     }
+
+    @FXML
+    private MediaView mediaPlayer;
+
+    public void getLoadingVideo() {
+
+        Media media = new Media(
+                Objects.requireNonNull(getClass().getResource("/com/calmat/keyaqua/media/background.mp4"))
+                        .toString());
+        MediaPlayer player = new MediaPlayer(media);
+        mediaPlayer.setMediaPlayer(player);
+        player.setOnEndOfMedia(() -> {
+            player.seek(Duration.ZERO);
+        });
+        player.play();
+
+    }
+
+    @FXML
+    private ImageView secureIcon;
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        TranslateTransition translate = new TranslateTransition();
+        translate.setNode(secureIcon);
+        translate.setDuration(Duration.millis(3000));
+        translate.setCycleCount(Animation.INDEFINITE);
+        translate.setByY(-15);
+        translate.setAutoReverse(true);
+        translate.play();
+        FadeTransition fade = new FadeTransition();
+        fade.setNode(secureIcon);
+        fade.setDuration(Duration.millis(2000));
+        fade.setInterpolator(Interpolator.LINEAR);
+        fade.setFromValue(0);
+        fade.setToValue(1);
+        fade.play();
+        getLoadingVideo();
+
+    }
+
 }

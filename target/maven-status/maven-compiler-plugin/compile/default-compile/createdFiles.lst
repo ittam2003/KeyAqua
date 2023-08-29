@@ -7,5 +7,4 @@ com\calmat\keyaqua\ui\KeyAquaApplication.class
 com\calmat\keyaqua\Logic\Database.class
 com\calmat\keyaqua\Logic\KeyChain.class
 com\calmat\keyaqua\ui\KeyMenuController.class
-com\calmat\keyaqua\ui\KeyMenuController$1.class
 com\calmat\keyaqua\Logic\Key.class

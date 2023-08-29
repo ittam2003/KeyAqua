@@ -54,7 +54,7 @@
             <cursor>
                <Cursor fx:constant="HAND" />
             </cursor></Button>
-         <Button fx:id="forgotten" mnemonicParsing="false" onAction="#forgottenPassword" prefHeight="7.0" prefWidth="159.0" style="-fx-background-color: transparent;" text="Forgotten password?" textFill="WHITE">
+         <Button fx:id="forgotten" mnemonicParsing="false" onAction="#forgottenPassword" prefHeight="7.0" prefWidth="159.0" style="-fx-background-color: transparent; -fx-border-color: transparent;" text="Forgotten password?" textFill="WHITE">
             <font>
                <Font name="Corbel Light" size="12.0" />
             </font>
@@ -62,7 +62,7 @@
                <Cursor fx:constant="HAND" />
             </cursor>
          </Button>
-         <Label alignment="CENTER" prefHeight="39.0" prefWidth="198.0" style="-fx-padding: 0; -fx-background-color: transparent;" text="Version: 0.1.0.PR" textFill="WHITE">
+         <Label alignment="CENTER" prefHeight="39.0" prefWidth="198.0" style="-fx-padding: 0; -fx-background-color: transparent;" text="Version: 0.1.0-beta" textFill="WHITE">
             <font>
                <Font name="Segoe UI Light" size="11.0" />
             </font>
@@ -73,17 +73,21 @@
        </VBox>
    </left>
    <center>
-      <ImageView fx:id="secureIcon" fitHeight="210.0" fitWidth="205.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
-         <image>
-            <Image url="@../images/secure.png" />
-         </image>
-      </ImageView>
-   </center>
-   <right>
-      <VBox alignment="TOP_RIGHT" prefHeight="600.0" prefWidth="161.0" style="-fx-padding: 20;" BorderPane.alignment="CENTER">
+      <VBox alignment="TOP_CENTER" prefHeight="600.0" prefWidth="161.0" style="-fx-padding: 20;" BorderPane.alignment="CENTER">
          <children>
-            <Button fx:id="createNew" maxHeight="26.0" mnemonicParsing="false" onAction="#createNewUser" prefHeight="26.0" prefWidth="119.0" text="Create new user" textFill="WHITE" />
+            <HBox alignment="TOP_RIGHT" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Button fx:id="createNew" maxHeight="26.0" mnemonicParsing="false" onAction="#createNewUser" prefHeight="26.0" prefWidth="119.0" text="Create new user" textFill="WHITE" />
+               </children>
+            </HBox>
+            <VBox prefHeight="200.0" prefWidth="100.0" VBox.vgrow="ALWAYS" />
+            <ImageView fx:id="secureIcon" fitHeight="210.0" fitWidth="205.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/secure.png" />
+               </image>
+            </ImageView>
+            <VBox prefHeight="200.0" prefWidth="100.0" VBox.vgrow="ALWAYS" />
          </children>
       </VBox>
-   </right>
+   </center>
 </BorderPane>

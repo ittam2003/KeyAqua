@@ -27,6 +27,8 @@
                </MenuItem>
                <MenuItem mnemonicParsing="false" onAction="#changePassword" style="-fx-text-fill: white;" text="Change password">
                </MenuItem>
+               <MenuItem mnemonicParsing="false" onAction="#deleteUser" style="-fx-text-fill: red;" text="Delete user">
+               </MenuItem>
            </items>
             <graphic>
                <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
@@ -39,81 +41,116 @@
                </ImageView>
             </graphic>
          </MenuButton>
-         <TextField maxWidth="213.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="21.0" prefWidth="200.0" promptText="Search" style="-fx-background-color: #fff; -fx-background-radius: 20;">
+         <TextField fx:id="searchTextField" maxWidth="236.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="34.0" prefWidth="236.0" promptText="Search" style="-fx-background-color: #282828; -fx-border-color: white; -fx-border-radius: 20; -fx-background-radius: 20;" visible="false">
             <font>
                <Font name="Segoe UI Light" size="12.0" />
             </font></TextField>
       </ToolBar>
    </top>
-   <center>
-      <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
-        <tabs>
-          <Tab text="Key Chain">
-            <content>
-                <ListView fx:id="keyList" style="-fx-background-color: #151515; -fx-padding: 20; -fx-border-color: black; -fx-border-width: 1;" />
-            </content>
-          </Tab>
-            <Tab text="Coming soon">
-                <content>
-                </content>
-            </Tab>
-        </tabs>
-      </TabPane>
-   </center>
    <left>
-      <VBox alignment="CENTER" prefHeight="563.0" prefWidth="222.0" style="-fx-background-color: rgba(0,0,0,0.47); -fx-padding: 20;" BorderPane.alignment="CENTER">
+      <VBox alignment="CENTER" prefHeight="563.0" prefWidth="222.0" style="-fx-background-color: black; -fx-padding: 10; -fx-spacing: 10;" BorderPane.alignment="CENTER">
          <children>
-            <Button mnemonicParsing="false" onAction="#addKey" prefHeight="41.0" prefWidth="147.0" text="Add key" textFill="WHITE">
-               <font>
-                  <Font name="Segoe UI Semilight" size="18.0" />
-               </font>
-            </Button>
-            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" VBox.vgrow="ALWAYS">
-               <children>
-                  <ImageView fitHeight="144.0" fitWidth="132.0" pickOnBounds="true" preserveRatio="true">
+              <Button mnemonicParsing="false" onAction="#addKey" prefHeight="75.0" prefWidth="202.0" style="-fx-border-radius: 20;" text="Add key" textFill="WHITE">
+                  <font>
+                      <Font name="Segoe UI Semilight" size="18.0" />
+                  </font>
+               <graphic>
+                  <ImageView fitHeight="33.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../images/safe.png" />
+                        <Image url="@../images/6676583.png" />
                      </image>
-                     <effect>
-                        <DropShadow />
-                     </effect>
                   </ImageView>
-               </children>
-            </VBox>
-            <Label text="Info" textFill="WHITE">
-               <font>
-                  <Font name="Segoe UI Light" size="30.0" />
-               </font>
-            </Label>
-            <HBox alignment="CENTER_LEFT" prefHeight="34.0" prefWidth="222.0">
-               <children>
-                  <Label style="-fx-padding: 10;" text="Name:" textFill="WHITE">
-                     <font>
-                        <Font name="Segoe UI Semilight" size="14.0" />
-                     </font></Label>
-                  <Label fx:id="selectedKeyLabel" text="No key selected" textFill="WHITE">
-                     <font>
-                        <Font name="Segoe UI Semilight" size="13.0" />
-                     </font></Label>
-               </children>
-            </HBox>
-            <Label text="Key options" textAlignment="CENTER" textFill="WHITE">
-               <font>
-                  <Font name="Segoe UI Light" size="30.0" />
-               </font>
-            </Label>
-            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" style="-fx-spacing: 20;">
-               <children>
-                  <Button mnemonicParsing="false" onAction="#deleteKey" prefHeight="32.0" prefWidth="70.0" style="-fx-background-color: transparent;" text="Delete" textFill="WHITE">
-                     <font>
-                        <Font name="Segoe UI Semilight" size="15.0" />
-                     </font></Button>
-                  <Button mnemonicParsing="false" onAction="#copy" prefHeight="31.0" prefWidth="58.0" style="-fx-background-color: transparent;" text="Copy" textFill="WHITE">
-                     <font>
-                        <Font name="Segoe UI Semilight" size="15.0" />
-                     </font></Button>
-               </children>
-            </HBox>
+               </graphic>
+              </Button>
+             <VBox alignment="CENTER" prefHeight="493.0" prefWidth="202.0" style="-fx-spacing: 20; -fx-background-color: #151515; -fx-background-radius: 20; -fx-padding: 10;" VBox.vgrow="ALWAYS">
+                 <VBox alignment="CENTER" prefHeight="155.0" prefWidth="182.0" VBox.vgrow="ALWAYS">
+                     <children>
+                         <ImageView fitHeight="144.0" fitWidth="132.0" pickOnBounds="true" preserveRatio="true">
+                             <image>
+                                 <Image url="@../images/secure.png" />
+                             </image>
+                         </ImageView>
+                     </children>
+                 </VBox>
+                 <VBox fx:id="optionBox" alignment="CENTER" prefHeight="246.0" prefWidth="182.0" style="-fx-padding: 0 0 30 0;" visible="false">
+                     <children>
+                         <Label text="Info" textFill="WHITE">
+                             <font>
+                                 <Font name="Segoe UI Light" size="30.0" />
+                             </font>
+                         </Label>
+                     <GridPane>
+                       <columnConstraints>
+                         <ColumnConstraints hgrow="SOMETIMES" maxWidth="86.0" minWidth="10.0" prefWidth="61.0" />
+                         <ColumnConstraints hgrow="SOMETIMES" maxWidth="126.0" minWidth="10.0" prefWidth="121.0" />
+                       </columnConstraints>
+                       <rowConstraints>
+                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                       </rowConstraints>
+                        <children>
+                                 <Label text="Name:" textFill="WHITE" GridPane.rowIndex="1">
+                                     <font>
+                                         <Font name="Segoe UI Semilight" size="15.0" />
+                                     </font>
+                                 </Label>
+                                 <Label fx:id="selectedKeyLabel" text="No key selected" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                     <font>
+                                         <Font name="Segoe UI Semilight" size="13.0" />
+                                     </font>
+                                 </Label>
+                           <Label text="Type:" textFill="WHITE" visible="false" GridPane.rowIndex="2">
+                              <font>
+                                 <Font name="Segoe UI Semilight" size="15.0" />
+                              </font>
+                           </Label>
+                           <Label text="Type not specified" textFill="WHITE" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                              <font>
+                                 <Font name="Segoe UI Semilight" size="13.0" />
+                              </font>
+                           </Label>
+                           <Label text="Security:" textFill="WHITE" visible="false" GridPane.rowIndex="3">
+                              <font>
+                                 <Font name="Segoe UI Semilight" size="15.0" />
+                              </font>
+                           </Label>
+                           <Label text="No level" textFill="WHITE" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                              <font>
+                                 <Font name="Segoe UI Semilight" size="13.0" />
+                              </font>
+                           </Label>
+                        </children>
+                     </GridPane>
+                         <Label text="Key options" textAlignment="CENTER" textFill="WHITE">
+                             <font>
+                                 <Font name="Segoe UI Light" size="30.0" />
+                             </font>
+                         </Label>
+                         <HBox alignment="CENTER" prefHeight="65.0" prefWidth="174.0" style="-fx-spacing: 20;">
+                             <children>
+                                 <Button mnemonicParsing="false" onAction="#deleteKey" prefHeight="32.0" prefWidth="70.0" style="-fx-background-color: transparent;" text="Delete" textFill="WHITE">
+                                     <font>
+                                         <Font name="Segoe UI Semilight" size="15.0" />
+                                     </font>
+                                 </Button>
+                                 <Button mnemonicParsing="false" onAction="#copy" prefHeight="31.0" prefWidth="58.0" style="-fx-background-color: transparent;" text="Copy" textFill="WHITE">
+                                     <font>
+                                         <Font name="Segoe UI Semilight" size="15.0" />
+                                     </font>
+                                 </Button>
+                             </children>
+                         </HBox>
+                     </children></VBox>
+             </VBox>
          </children></VBox>
    </left>
+   <center>
+      <VBox prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: black; -fx-padding: 10 10 10 0;" BorderPane.alignment="CENTER">
+         <children>
+             <VBox fx:id="keyBox" alignment="TOP_CENTER" prefHeight="629.0" prefWidth="778.0" style="-fx-background-color: #151515; -fx-background-radius: 20; -fx-padding: 20; -fx-border-color: black; -fx-border-width: 1; -fx-spacing: 10;" VBox.vgrow="ALWAYS" />
+         </children>
+      </VBox>
+   </center>
 </BorderPane>

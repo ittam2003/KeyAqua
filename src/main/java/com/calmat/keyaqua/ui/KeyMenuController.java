@@ -20,15 +20,14 @@ import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.effect.DropShadow;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.Clipboard;
 import javafx.scene.input.ClipboardContent;
-import javafx.scene.layout.GridPane;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.Priority;
-import javafx.scene.layout.VBox;
+import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
+import javafx.scene.text.TextAlignment;
 import javafx.stage.Popup;
 import javafx.stage.Stage;
 
@@ -43,56 +42,82 @@ public class KeyMenuController implements Initializable {
     //-fx-background-color:  linear-gradient(from 0.0% 0.0% to 100.0% 0.0%, #382ea9 0.0%, #6d51d0 100.0%);
 
     @FXML
-    private ListView<String> keyList;
+    private VBox keyBox;
 
     private Key selectedKey;
 
     @FXML
     private Label selectedKeyLabel;
 
+    @FXML
+    private VBox optionBox;
 
-    public void populateList() throws Exception {
+    @FXML
+
+    private BorderPane bg;
+
+    public void populateList() {
         Database database = new Database();
         KeyChain keychain = database.loadKeys();
+        List<String> keyList = keychain.getKeyNames();
+        keyBox.getChildren().clear();
 
-        ObservableList<String> observableKeyList = FXCollections.observableArrayList(keychain.getKeyNames());
-        keyList.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
-            @Override
-            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
-                selectedKey = keychain.retrieveKeyFromName(newValue);
-                selectedKeyLabel.setText(newValue);
-            }
-        });
 
-        keyList.setItems(observableKeyList);
+        for (int i = 0; i < keyList.size(); i++){
+            String keyName = keyList.get(i);
+            Button button = new Button();
+            button.setId("keyButtons");
+            button.setAlignment(Pos.CENTER_LEFT);
+
+            Label keyNameLabel = new Label(keyName);
+            Label keyInfo = new Label("Key length: " + keychain.retrieveKeyFromName(keyName).getKey().length());
+            keyInfo.setId("keyInfoLabel");
+            HBox buttonTextBox = new HBox(keyNameLabel, keyInfo);
+            buttonTextBox.setAlignment(Pos.CENTER_LEFT);
+            buttonTextBox.setSpacing(30);
+            button.setGraphic(buttonTextBox);
+            keyBox.getChildren().add(button);
+
+            button.setOnAction(e ->{
+                selectedKeyLabel.setText(keyName);
+                selectedKey = keychain.retrieveKeyFromName(keyName);
+                optionBox.setVisible(true);
+            });
+        }
     }
 
     public void addKey(ActionEvent event) throws IOException {
         // Create a GridPane to hold the controls
-        GridPane gridPane = new GridPane();
-        gridPane.setPrefSize(300, 150);
-        gridPane.setHgap(10);
-        gridPane.setVgap(10);
-        gridPane.setPadding(new Insets(10));
+        VBox addKeyBox = new VBox();
+        addKeyBox.setPrefSize(300, 150);
+        addKeyBox.setPadding(new Insets(10));
+
+        Label titleLabel = new Label("Add key");
+        titleLabel.setId("titleLabelAK");
+        titleLabel.setTextFill(Color.color(1, 0, 0));
 
         //Add an error message
         Label errorMessage = new Label();
         errorMessage.setText("");
         errorMessage.setTextFill(Color.color(1, 0, 0));
-        gridPane.add(errorMessage, 1, 0);
+
 
         TextField nameTextField = new TextField();
         nameTextField.setPromptText("Name");
-        gridPane.add(new Label("Name:"), 0, 1);
-        gridPane.add(nameTextField, 1, 1);
 
         TextField keyTextField = new TextField();
         keyTextField.setPromptText("Key");
-        gridPane.add(new Label("Key:"), 0, 2);
-        gridPane.add(keyTextField, 1, 2);
 
+        GridPane keyGrid = new GridPane();
+        keyGrid.add(new Label("Name:"), 0,0);
+        keyGrid.add(nameTextField,1,0);
+        keyGrid.add(new Label("Key:"), 0,1);
+        keyGrid.add(keyTextField,1,1);
+        keyGrid.setHgap(10);
+        keyGrid.setVgap(10);
 
         // Create a button to submit the form
+        VBox vBox = new VBox(addKeyBox);
         Button submitButton = new Button("Submit");
         submitButton.setOnAction(event1 -> {
             Key newKey = new Key(nameTextField.getText(), keyTextField.getText());
@@ -106,25 +131,16 @@ public class KeyMenuController implements Initializable {
             } catch (Exception e) {
                 throw new RuntimeException(e);
             }
-            ((Stage) submitButton.getScene().getWindow()).close(); // Close the window
+            bg.getChildren().remove(vBox);
         });
 
 
-        // Add the button to the GridPane
-        gridPane.add(submitButton, 1, 6);
+        addKeyBox.getChildren().addAll(titleLabel, errorMessage, keyGrid, submitButton);
+        addKeyBox.setStyle("-fx-spacing: 10; -fx-background-radius: 20; -fx-background-color: #151515");
+        addKeyBox.setPrefHeight(2000);
 
-        // Create a new Scene with the GridPane as the root node
-        Scene scene = new Scene(gridPane);
-        scene.getStylesheets().add(Objects.requireNonNull(this.getClass().getResource("/com/calmat/keyaqua/themes/popUp.css")).toExternalForm());
-
-        // Create a new Stage to hold the Scene
-        Stage popupStage = new Stage();
-        popupStage.setScene(scene);
-
-        // Set the title of the Stage and show it
-        popupStage.setTitle("Add activity");
-        popupStage.setResizable(false);
-        popupStage.show();
+        vBox.setStyle("-fx-padding: 10 10 10 0; -fx-background-color: black");
+        bg.setRight(vBox);
     }
 
     public void deleteKey(ActionEvent event) throws IOException {
@@ -177,19 +193,25 @@ public class KeyMenuController implements Initializable {
     }
 
     public void aboutPage(){
-        Alert alertDialog = new Alert(Alert.AlertType.INFORMATION);
+
         ImageView logo = new ImageView("/com/calmat/keyaqua/images/6676583.png");
         logo.setFitWidth(100);
         logo.setFitHeight(100);
-        alertDialog.setGraphic(logo);
-        alertDialog.setTitle("About");
-        alertDialog.setHeaderText("Version 0.0.5");
-        alertDialog.setContentText("Created by Calm Matt");
-        DialogPane dialogPane = alertDialog.getDialogPane();
-        dialogPane.getStylesheets().add(Objects.requireNonNull(getClass().getResource("/com/calmat/keyaqua/themes/alert.css")).toExternalForm());
-        dialogPane.getStyleClass().add("custom-alert-dialog");
-        alertDialog.getDialogPane().lookup(".header-panel").setStyle("-fx-background-color: #3d3d3d;");
-        Optional<ButtonType> respons = alertDialog.showAndWait();
+        Button collapseButton = new Button("X");
+        Label titleLabel = new Label("About");
+        Label versionLabel = new Label("Version 0.1.0-beta");
+        Label creditLabel = new Label("Created by Calm Matt");
+
+        VBox aboutBox = new VBox(collapseButton, titleLabel, logo, versionLabel, creditLabel);
+        aboutBox.setStyle("-fx-padding: 10; -fx-spacing: 10; -fx-background-radius: 20; -fx-background-color: #151515");
+        aboutBox.setPrefHeight(2000);
+        VBox borderBox = new VBox(aboutBox);
+        borderBox.setStyle("-fx-padding: 10 10 10 0; -fx-background-color: black");
+        collapseButton.setOnAction(e ->{
+            bg.getChildren().remove(borderBox);
+        });
+
+        bg.setRight(borderBox);
     }
 
     public void underDevelopment(){
@@ -333,6 +355,44 @@ public class KeyMenuController implements Initializable {
             populateList();
         } catch (Exception e) {
             throw new RuntimeException(e);
+        }
+    }
+
+    public void deleteUser(ActionEvent event) throws IOException {
+        Alert alertDialog = new Alert(Alert.AlertType.INFORMATION);
+        ImageView logo = new ImageView("/com/calmat/keyaqua/images/clear.png");
+        logo.setFitWidth(100);
+        logo.setFitHeight(100);
+        alertDialog.setGraphic(logo);
+        alertDialog.setTitle("Warning");
+        alertDialog.setHeaderText("Are you sure you want to delete this user?");
+        // Create buttons for the alert
+        ButtonType buttonTypeYes = new ButtonType("Yes");
+        ButtonType buttonTypeNo = new ButtonType("No");
+
+        alertDialog.getButtonTypes().setAll(buttonTypeYes, buttonTypeNo);
+        DialogPane dialogPane = alertDialog.getDialogPane();
+        dialogPane.getStylesheets().add(Objects.requireNonNull(getClass().getResource("/com/calmat/keyaqua/themes/alert.css")).toExternalForm());
+        dialogPane.getStyleClass().add("custom-alert-dialog");
+        alertDialog.getDialogPane().lookup(".header-panel").setStyle("-fx-background-color: #3d3d3d;");
+
+
+        // Show the alert and wait for the user's response
+        Optional<ButtonType> result = alertDialog.showAndWait();
+        if (result.isPresent() && result.get() == buttonTypeYes) {
+            Database database = new Database();
+            try {
+                database.deleteUserFromFile(database.getActiveUser());
+                lock();
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        } else if (result.isPresent() && result.get() == buttonTypeNo) {
+            try {
+                alertDialog.close();
+            } catch (Exception e) {
+                throw new RuntimeException(e);
+            }
         }
     }
 }
