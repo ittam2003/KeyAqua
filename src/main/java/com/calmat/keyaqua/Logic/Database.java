@@ -182,6 +182,11 @@ public class Database {
     }
 
     public void writeChangesToFile(User user) throws IOException{
+        deleteUserFromFile(user);
+        writeUserToFile(user);
+    }
+
+    public void deleteUserFromFile(User user) throws IOException{
         String filePath = "data/users.dat";
 
         // Read the existing lines from the file and exclude the line starting with the specified user
@@ -202,7 +207,6 @@ public class Database {
             writer.write(updatedLine + System.lineSeparator());
         }
         writer.close();
-        writeUserToFile(user);
     }
 
     public String getBackupKey(User user) {
