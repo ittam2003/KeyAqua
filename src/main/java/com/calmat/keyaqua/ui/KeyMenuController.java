@@ -17,6 +17,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
+import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
@@ -28,6 +29,7 @@ import javafx.scene.layout.Priority;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
+import javafx.stage.Popup;
 import javafx.stage.Stage;
 
 import java.net.URL;
@@ -207,47 +209,33 @@ public class KeyMenuController implements Initializable {
     }
 
     public void changePassword(){
-        GridPane gridPane = new GridPane();
-        gridPane.setPrefSize(300, 150);
-        gridPane.setHgap(10);
-        gridPane.setVgap(10);
-        gridPane.setPadding(new Insets(10));
+        VBox vBox = new VBox();
+        vBox.setPrefSize(300, 150);
+        vBox.setSpacing(10);
+        vBox.setPadding(new Insets(10));
 
         //Add an error message
         Label errorMessage = new Label();
         errorMessage.setText("");
         errorMessage.setTextFill(Color.color(1, 0, 0));
-        gridPane.add(errorMessage, 1, 0);
 
         PasswordField passwordField = new PasswordField();
         passwordField.setPromptText("Key");
-        gridPane.add(new Label("Old password:"), 0, 1);
-        gridPane.add(passwordField, 1, 1);
+        Label label = new Label("Old password:");
+        HBox hBox = new HBox(label, passwordField);
 
         PasswordField newPasswordField = new PasswordField();
         newPasswordField.setPromptText("Key");
-        gridPane.add(new Label("New password:"), 0, 2);
-        gridPane.add(newPasswordField, 1, 2);
-
+        HBox hBox2 = new HBox(new Label("New password:"), newPasswordField);
 
         Button submitButton = new Button("Submit");
         submitButton.setOnAction(event1 -> {
-            String password;
-            File file5 = new File("data/users.dat");
-            try (BufferedReader reader = new BufferedReader(new FileReader(file5))) {
-                password = reader.readLine();
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
-
+            Database database = new Database();
             String keyText = passwordField.getText();
             String newKeyText = newPasswordField.getText();
-            if (keyText.equals(password) | password == null){
-                Database database = new Database();
+            if (keyText.equals(database.getActiveUser().getPassword())){
                 try {
-                    database.writeKeyToFile(new Key("",""));
-                } catch (IOException e) {
-                    throw new RuntimeException(e);
+                    database.writePasswordToFile(newKeyText);
                 } catch (Exception e) {
                     throw new RuntimeException(e);
                 }
@@ -257,14 +245,16 @@ public class KeyMenuController implements Initializable {
             }
         });
 
-        gridPane.add(submitButton, 1, 6);
-        Scene scene = new Scene(gridPane);
+        vBox.getChildren().addAll(errorMessage, hBox, hBox2, submitButton);
+        vBox.setAlignment(Pos.CENTER);
+        Scene scene = new Scene(vBox);
         scene.getStylesheets().add(Objects.requireNonNull(this.getClass().getResource("/com/calmat/keyaqua/themes/popUp.css")).toExternalForm());
         Stage popupStage = new Stage();
         popupStage.setScene(scene);
         popupStage.setTitle("Password");
         popupStage.setResizable(false);
         popupStage.show();
+
     }
 
     public void lock() {
