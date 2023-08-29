@@ -228,4 +228,14 @@ public class Database {
     public boolean checkIfKeyExists() {
         return !getBackupKey(getActiveUser()).isEmpty();
     }
+
+    public void writePasswordToFile(String newPassword) {
+        User user = getActiveUser();
+        user.setPassword(newPassword);
+        try {
+            writeChangesToFile(user);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }
