@@ -62,7 +62,7 @@
                         <!--  Default configuration for running with: mvn clean javafx:run  -->
                         <id>default-cli</id>
                         <configuration>
-                            <mainClass>com.calmat.keyaqua.MainLauncher</mainClass>
+                            <mainClass>com.calmat.gitLocker.MainLauncher</mainClass>
                             <launcher>app</launcher>
                             <jlinkZipName>app</jlinkZipName>
                             <jlinkImageName>app</jlinkImageName>

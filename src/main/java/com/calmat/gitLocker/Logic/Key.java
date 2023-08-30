@@ -1,4 +1,4 @@
-package com.calmat.keyaqua.Logic;
+package com.calmat.gitLocker.Logic;
 
 /**
  * Represents a key... l8r

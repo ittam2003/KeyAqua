@@ -21,14 +21,19 @@
                            <Image url="@../images/6676583.png" />
                         </image>
                      </ImageView>
-                     <Label style="-fx-background-color: transparent; -fx-padding: 0;" text="KeyAqua" textFill="WHITE">
+                     <Label style="-fx-background-color: transparent; -fx-padding: 0;" text="Git" textFill="WHITE">
                         <font>
-                           <Font name="Corbel Bold" size="43.0" />
+                           <Font name="Segoe UI Semibold" size="43.0" />
+                        </font>
+                     </Label>
+                     <Label text="Locker" textFill="WHITE">
+                        <font>
+                           <Font name="Segoe UI Semilight" size="43.0" />
                         </font>
                      </Label>
                   </children>
                </HBox>
-               <Label alignment="CENTER" contentDisplay="CENTER" style="-fx-background-color: transparent; -fx-padding: 0;" text="KeyAqua is locked" textFill="WHITE">
+               <Label alignment="CENTER" contentDisplay="CENTER" style="-fx-background-color: transparent; -fx-padding: 0;" text="Create new user" textFill="WHITE">
                   <font>
                      <Font name="Corbel Light" size="18.0" />
                   </font>

@@ -1,18 +1,13 @@
-package com.calmat.keyaqua.ui;
+package com.calmat.gitLocker.ui;
 
-import com.calmat.keyaqua.Logic.Database;
+import com.calmat.gitLocker.Logic.Key;
+import com.calmat.gitLocker.Logic.KeyChain;
+import com.calmat.gitLocker.Logic.Database;
 
 import java.io.*;
-import java.nio.file.Path;
 import java.util.List;
 import java.util.Objects;
 
-import com.calmat.keyaqua.Logic.Key;
-import com.calmat.keyaqua.Logic.KeyChain;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -20,15 +15,12 @@ import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.scene.effect.DropShadow;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.Clipboard;
 import javafx.scene.input.ClipboardContent;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
-import javafx.scene.text.TextAlignment;
-import javafx.stage.Popup;
 import javafx.stage.Stage;
 
 import java.net.URL;

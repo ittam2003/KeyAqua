@@ -1,8 +1,7 @@
-package com.calmat.keyaqua.ui;
+package com.calmat.gitLocker.ui;
 
-import com.calmat.keyaqua.Logic.Database;
-import com.calmat.keyaqua.Logic.Key;
-import com.calmat.keyaqua.Logic.User;
+import com.calmat.gitLocker.Logic.Database;
+import com.calmat.gitLocker.Logic.User;
 import javafx.animation.Animation;
 import javafx.animation.FadeTransition;
 import javafx.animation.Interpolator;

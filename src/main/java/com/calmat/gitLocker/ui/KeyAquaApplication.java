@@ -1,4 +1,4 @@
-package com.calmat.keyaqua.ui;
+package com.calmat.gitLocker.ui;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -22,6 +22,7 @@ public class KeyAquaApplication extends Application {
         Scene scene = new Scene(fxmlLoader.load(), 1000, 650);
         stg = stage;
         stage.setMinHeight(650);
+        stage.setTitle("GitLocker");
         stage.setScene(scene);
         scene.getStylesheets().add(Objects.requireNonNull(this.getClass().getResource("/com/calmat/keyaqua/themes/theme.css")).toExternalForm());
         stage.getIcons().add(new Image("/com/calmat/keyaqua/images/6676583.png"));

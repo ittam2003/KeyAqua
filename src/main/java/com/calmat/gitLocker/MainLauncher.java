@@ -1,7 +1,7 @@
-package com.calmat.keyaqua;
+package com.calmat.gitLocker;
 
 
-import com.calmat.keyaqua.ui.KeyAquaApplication;
+import com.calmat.gitLocker.ui.KeyAquaApplication;
 
 public class MainLauncher {
     public static void main(String[] args) {

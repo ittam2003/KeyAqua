@@ -1,4 +1,4 @@
-package com.calmat.keyaqua.Logic;
+package com.calmat.gitLocker.Logic;
 
 public class User {
 
