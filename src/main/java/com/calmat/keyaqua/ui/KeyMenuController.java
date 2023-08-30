@@ -53,14 +53,17 @@ public class KeyMenuController implements Initializable {
     private VBox optionBox;
 
     @FXML
-
     private BorderPane bg;
+
+    @FXML
+    private Label activeUserLabel;
 
     public void populateList() {
         Database database = new Database();
         KeyChain keychain = database.loadKeys();
         List<String> keyList = keychain.getKeyNames();
         keyBox.getChildren().clear();
+        activeUserLabel.setText(database.getActiveUserAsString());
 
 
         for (int i = 0; i < keyList.size(); i++){

@@ -41,6 +41,11 @@
                </ImageView>
             </graphic>
          </MenuButton>
+         <Label fx:id="activeUserLabel" text="username" textFill="WHITE">
+            <font>
+               <Font name="Segoe UI Light" size="12.0" />
+            </font>
+         </Label>
          <TextField fx:id="searchTextField" maxWidth="236.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="34.0" prefWidth="236.0" promptText="Search" style="-fx-background-color: #282828; -fx-border-color: white; -fx-border-radius: 20; -fx-background-radius: 20;" visible="false">
             <font>
                <Font name="Segoe UI Light" size="12.0" />
