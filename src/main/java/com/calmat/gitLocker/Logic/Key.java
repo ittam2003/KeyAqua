@@ -1,36 +1,65 @@
 package com.calmat.gitLocker.Logic;
 
-/**
- * Represents a key... l8r
- */
 
+/**
+ * The type Key.
+ */
 public class Key {
 
     private String name;
     private String key;
 
+    /**
+     * Instantiates a new Key.
+     *
+     * @param name the name
+     * @param key  the key
+     */
     public Key(String name, String key){
         this.name = name;
         this.key = key;
     }
 
+    /**
+     * Get name string.
+     *
+     * @return the string
+     */
     public String getName(){
         return this.name;
     }
 
+    /**
+     * Get key string.
+     *
+     * @return the string
+     */
     public String getKey(){
         return this.key;
     }
 
+    /**
+     * Set name.
+     *
+     * @param name the name
+     */
     public void setName(String name){
         this.name = name;
     }
 
+    /**
+     * Set key.
+     *
+     * @param key the key
+     */
     public void setKey(String key){
         this.key = name;
     }
 
 
+    /**
+     * The type Key builder.
+     */
     public static class KeyBuilder {
         private String name;
         private String key;

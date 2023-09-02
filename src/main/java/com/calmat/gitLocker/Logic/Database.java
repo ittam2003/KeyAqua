@@ -5,6 +5,9 @@ import java.security.SecureRandom;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * The type Database.
+ */
 public class Database {
 
     private String fileName;
@@ -12,7 +15,12 @@ public class Database {
     private String path = "data/userData/";
 
 
-
+    /**
+     * Write key to file.
+     *
+     * @param key the key
+     * @throws IOException the io exception
+     */
     public void writeKeyToFile(Key key) throws IOException {
         try (FileWriter writer = new FileWriter("data/userData/" + getActiveUserAsString() + ".dat", true)) {
 
@@ -20,6 +28,12 @@ public class Database {
         }
     }
 
+    /**
+     * Write user to file.
+     *
+     * @param user the user
+     * @throws IOException the io exception
+     */
     public void writeUserToFile(User user) throws IOException {
         try (FileWriter writer = new FileWriter("data/users.dat", true)) {
             writer.write(user.getUsername() + " --- " + user.getPassword() + "\n");
@@ -36,6 +50,11 @@ public class Database {
     }
 
 
+    /**
+     * Get active user as string string.
+     *
+     * @return the string
+     */
     public String getActiveUserAsString(){
         File activeUserFile = new File("data/activeUser.dat");
         try (BufferedReader reader = new BufferedReader(new FileReader(activeUserFile))) {
@@ -47,6 +66,11 @@ public class Database {
         }
     }
 
+    /**
+     * Get active user user.
+     *
+     * @return the user
+     */
     public User getActiveUser(){
         File activeUserFile = new File("data/activeUser.dat");
         try (BufferedReader reader = new BufferedReader(new FileReader(activeUserFile))) {
@@ -68,6 +92,12 @@ public class Database {
         return null;
     }
 
+    /**
+     * Sets active user.
+     *
+     * @param userName the user name
+     * @throws IOException the io exception
+     */
     public void setActiveUser(String userName) throws IOException{
         FileWriter writer = null;
         writer = new FileWriter("data/activeUser.dat");
@@ -75,6 +105,12 @@ public class Database {
         writer.close();
     }
 
+    /**
+     * Check user boolean.
+     *
+     * @param user the user
+     * @return the boolean
+     */
     public boolean checkUser(User user){
 
         List<String> lines = new ArrayList<>();
@@ -94,6 +130,12 @@ public class Database {
         return false;
     }
 
+    /**
+     * Delete key.
+     *
+     * @param keyToDelete the key to delete
+     * @throws IOException the io exception
+     */
     public void deleteKey(Key keyToDelete) throws IOException {
         // Read the file and store its lines in a list
         String nameToDelete = keyToDelete.getName();
@@ -117,6 +159,11 @@ public class Database {
         }
     }
 
+    /**
+     * Load keys key chain.
+     *
+     * @return the key chain
+     */
     public KeyChain loadKeys() {
         KeyChain keyChain = new KeyChain();
         try (BufferedReader reader = new BufferedReader(new FileReader("data/userData/" + getActiveUserAsString()+".dat"))) {
@@ -136,6 +183,11 @@ public class Database {
     }
 
 
+    /**
+     * Generate password string.
+     *
+     * @return the string
+     */
     public static String generatePassword() {
         // Define the characters allowed in the password
         String allowedChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+=<>?";
@@ -156,6 +208,13 @@ public class Database {
         return password.toString();
     }
 
+    /**
+     * Add backup key.
+     *
+     * @param user the user
+     * @param bk   the bk
+     * @throws IOException the io exception
+     */
     public void addBackupKey(String user, String bk) throws IOException {
         // Define the file path
         String filePath = "data/users.dat";
@@ -181,11 +240,23 @@ public class Database {
         writer.close();
     }
 
+    /**
+     * Write changes to file.
+     *
+     * @param user the user
+     * @throws IOException the io exception
+     */
     public void writeChangesToFile(User user) throws IOException{
         deleteUserFromFile(user);
         writeUserToFile(user);
     }
 
+    /**
+     * Delete user from file.
+     *
+     * @param user the user
+     * @throws IOException the io exception
+     */
     public void deleteUserFromFile(User user) throws IOException{
         String filePath = "data/users.dat";
 
@@ -209,6 +280,12 @@ public class Database {
         writer.close();
     }
 
+    /**
+     * Gets backup key.
+     *
+     * @param user the user
+     * @return the backup key
+     */
     public String getBackupKey(User user) {
         try (BufferedReader reader = new BufferedReader(new FileReader("data/users.dat"))) {
             String line;
@@ -229,10 +306,20 @@ public class Database {
         return "";
     }
 
+    /**
+     * Check if key exists boolean.
+     *
+     * @return the boolean
+     */
     public boolean checkIfKeyExists() {
         return !getBackupKey(getActiveUser()).isEmpty();
     }
 
+    /**
+     * Write password to file.
+     *
+     * @param newPassword the new password
+     */
     public void writePasswordToFile(String newPassword) {
         User user = getActiveUser();
         user.setPassword(newPassword);

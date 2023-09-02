@@ -29,6 +29,9 @@ import java.util.ResourceBundle;
 
 import static javafx.scene.paint.Color.WHITE;
 
+/**
+ * The type Key menu controller.
+ */
 public class KeyMenuController implements Initializable {
 
     //-fx-background-color:  linear-gradient(from 0.0% 0.0% to 100.0% 0.0%, #382ea9 0.0%, #6d51d0 100.0%);
@@ -50,6 +53,9 @@ public class KeyMenuController implements Initializable {
     @FXML
     private Label activeUserLabel;
 
+    /**
+     * Populate list.
+     */
     public void populateList() {
         Database database = new Database();
         KeyChain keychain = database.loadKeys();
@@ -81,6 +87,12 @@ public class KeyMenuController implements Initializable {
         }
     }
 
+    /**
+     * Add key.
+     *
+     * @param event the event
+     * @throws IOException the io exception
+     */
     public void addKey(ActionEvent event) throws IOException {
         // Create a GridPane to hold the controls
         VBox addKeyBox = new VBox();
@@ -138,6 +150,12 @@ public class KeyMenuController implements Initializable {
         bg.setRight(vBox);
     }
 
+    /**
+     * Delete key.
+     *
+     * @param event the event
+     * @throws IOException the io exception
+     */
     public void deleteKey(ActionEvent event) throws IOException {
         Alert alertDialog = new Alert(Alert.AlertType.INFORMATION);
         ImageView logo = new ImageView("/com/calmat/keyaqua/images/clear.png");
@@ -180,6 +198,9 @@ public class KeyMenuController implements Initializable {
 
     }
 
+    /**
+     * Copy.
+     */
     public void copy(){
         Clipboard clipboard = Clipboard.getSystemClipboard();
         ClipboardContent content = new ClipboardContent();
@@ -187,6 +208,9 @@ public class KeyMenuController implements Initializable {
         clipboard.setContent(content);
     }
 
+    /**
+     * About page.
+     */
     public void aboutPage(){
 
         ImageView logo = new ImageView("/com/calmat/keyaqua/images/6676583.png");
@@ -209,6 +233,9 @@ public class KeyMenuController implements Initializable {
         bg.setRight(borderBox);
     }
 
+    /**
+     * Under development.
+     */
     public void underDevelopment(){
         Alert alertDialog = new Alert(Alert.AlertType.INFORMATION);
         ImageView logo = new ImageView("/com/calmat/keyaqua/images/6676583.png");
@@ -225,6 +252,9 @@ public class KeyMenuController implements Initializable {
         Optional<ButtonType> respons = alertDialog.showAndWait();
     }
 
+    /**
+     * Change password.
+     */
     public void changePassword(){
         VBox vBox = new VBox();
         vBox.setPrefSize(300, 150);
@@ -274,6 +304,9 @@ public class KeyMenuController implements Initializable {
 
     }
 
+    /**
+     * Lock.
+     */
     public void lock() {
         KeyAquaApplication m = new KeyAquaApplication();
         try {
@@ -283,6 +316,9 @@ public class KeyMenuController implements Initializable {
         }
     }
 
+    /**
+     * Gen backup key.
+     */
     public void genBackupKey(){
         VBox vbox = new VBox();
         vbox.setId("backupKeyBox");
@@ -353,6 +389,12 @@ public class KeyMenuController implements Initializable {
         }
     }
 
+    /**
+     * Delete user.
+     *
+     * @param event the event
+     * @throws IOException the io exception
+     */
     public void deleteUser(ActionEvent event) throws IOException {
         Alert alertDialog = new Alert(Alert.AlertType.INFORMATION);
         ImageView logo = new ImageView("/com/calmat/keyaqua/images/clear.png");

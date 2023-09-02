@@ -10,10 +10,18 @@ public class KeyChain {
 
     private List<Key> keys;
 
+    /**
+     * Instantiates a new Key chain.
+     */
     public KeyChain() {
         this.keys = new ArrayList<>();
     }
 
+    /**
+     * Add key.
+     *
+     * @param key the key
+     */
     public void addKey(Key key) {
 
         boolean keyExists = keys.stream()
@@ -25,16 +33,31 @@ public class KeyChain {
         }
     }
 
+    /**
+     * Remove key.
+     *
+     * @param key the key
+     */
     public void removeKey(Key key){
         if (keys.contains(key)){
             keys.remove(key);
         }
     }
 
+    /**
+     * Get keys list.
+     *
+     * @return the list
+     */
     public List<Key> getKeys(){
         return keys;
     }
 
+    /**
+     * Get key names list.
+     *
+     * @return the list
+     */
     public List<String> getKeyNames(){
         List<String> keyNames = new ArrayList<>();
 
@@ -44,6 +67,12 @@ public class KeyChain {
         return keyNames;
     }
 
+    /**
+     * Retrieve key from name key.
+     *
+     * @param name the name
+     * @return the key
+     */
     public Key retrieveKeyFromName(String name){
         for (Key key : keys) {
             if (key.getName().equals(name)) {

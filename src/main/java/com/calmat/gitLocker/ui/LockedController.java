@@ -21,6 +21,9 @@ import java.net.URL;
 import java.util.Objects;
 import java.util.ResourceBundle;
 
+/**
+ * The type Locked controller.
+ */
 public class LockedController implements Initializable {
 
 
@@ -34,6 +37,9 @@ public class LockedController implements Initializable {
     @FXML
     private Label errorMessage;
 
+    /**
+     * Password.
+     */
     public void password(){
         if (!usernameField.getText().isEmpty() && !passwordField.getText().isEmpty()){
             User user = new User(usernameField.getText(), passwordField.getText());
@@ -53,6 +59,9 @@ public class LockedController implements Initializable {
         }
     }
 
+    /**
+     * Create new user.
+     */
     public void createNewUser(){
         KeyAquaApplication m = new KeyAquaApplication();
         try {
@@ -62,6 +71,9 @@ public class LockedController implements Initializable {
         }
     }
 
+    /**
+     * Forgotten password.
+     */
     public void forgottenPassword(){
         KeyAquaApplication m = new KeyAquaApplication();
         try {
@@ -71,6 +83,9 @@ public class LockedController implements Initializable {
         }
     }
 
+    /**
+     * Unlock.
+     */
     public void unlock() {
         KeyAquaApplication m = new KeyAquaApplication();
         try {
@@ -83,6 +98,9 @@ public class LockedController implements Initializable {
     @FXML
     private MediaView mediaPlayer;
 
+    /**
+     * Gets loading video.
+     */
     public void getLoadingVideo() {
 
         Media media = new Media(

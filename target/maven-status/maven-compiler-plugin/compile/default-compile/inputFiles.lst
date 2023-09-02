@@ -1,9 +1,9 @@
-A:\Users\matti\Programming\Java Projects\KeyAqua\src\main\java\com\calmat\keyaqua\Logic\Key.java
-A:\Users\matti\Programming\Java Projects\KeyAqua\src\main\java\com\calmat\keyaqua\ui\NewUserController.java
-A:\Users\matti\Programming\Java Projects\KeyAqua\src\main\java\com\calmat\keyaqua\ui\KeyAquaApplication.java
-A:\Users\matti\Programming\Java Projects\KeyAqua\src\main\java\com\calmat\keyaqua\MainLauncher.java
-A:\Users\matti\Programming\Java Projects\KeyAqua\src\main\java\com\calmat\keyaqua\Logic\KeyChain.java
-A:\Users\matti\Programming\Java Projects\KeyAqua\src\main\java\com\calmat\keyaqua\ui\KeyMenuController.java
-A:\Users\matti\Programming\Java Projects\KeyAqua\src\main\java\com\calmat\keyaqua\Logic\Database.java
-A:\Users\matti\Programming\Java Projects\KeyAqua\src\main\java\com\calmat\keyaqua\ui\LockedController.java
-A:\Users\matti\Programming\Java Projects\KeyAqua\src\main\java\com\calmat\keyaqua\Logic\User.java
+D:\Users\Matti\IdeaProjects\GitLocker\src\main\java\com\calmat\gitLocker\ui\NewUserController.java
+D:\Users\Matti\IdeaProjects\GitLocker\src\main\java\com\calmat\gitLocker\Logic\Key.java
+D:\Users\Matti\IdeaProjects\GitLocker\src\main\java\com\calmat\gitLocker\Logic\Database.java
+D:\Users\Matti\IdeaProjects\GitLocker\src\main\java\com\calmat\gitLocker\Logic\User.java
+D:\Users\Matti\IdeaProjects\GitLocker\src\main\java\com\calmat\gitLocker\MainLauncher.java
+D:\Users\Matti\IdeaProjects\GitLocker\src\main\java\com\calmat\gitLocker\ui\KeyMenuController.java
+D:\Users\Matti\IdeaProjects\GitLocker\src\main\java\com\calmat\gitLocker\ui\KeyAquaApplication.java
+D:\Users\Matti\IdeaProjects\GitLocker\src\main\java\com\calmat\gitLocker\Logic\KeyChain.java
+D:\Users\Matti\IdeaProjects\GitLocker\src\main\java\com\calmat\gitLocker\ui\LockedController.java

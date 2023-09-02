@@ -12,6 +12,9 @@ import java.io.IOException;
 import java.util.Objects;
 
 
+/**
+ * The type Key aqua application.
+ */
 public class KeyAquaApplication extends Application {
 
     private static Stage stg;
@@ -31,6 +34,7 @@ public class KeyAquaApplication extends Application {
 
     /**
      * This method changes the fxml file in the same scene.
+     *
      * @param fxml name of the requested fxml file.
      * @throws IOException Exception
      */
@@ -40,6 +44,11 @@ public class KeyAquaApplication extends Application {
     }
 
 
+    /**
+     * The entry point of application.
+     *
+     * @param args the input arguments
+     */
     public static void main(String[] args) {
         launch();
     }

@@ -23,6 +23,9 @@ import java.net.URL;
 import java.util.Objects;
 import java.util.ResourceBundle;
 
+/**
+ * The type New user controller.
+ */
 public class NewUserController implements Initializable {
 
     @FXML
@@ -52,6 +55,9 @@ public class NewUserController implements Initializable {
     @FXML
     private TextField backupKeyField;
 
+    /**
+     * Create user.
+     */
     public void createUser(){
         if( (newPasswordField1.getText().isEmpty() || (newPasswordField2.getText().isEmpty())
                 || (newUsernameField.getText().isEmpty()))){
@@ -80,6 +86,9 @@ public class NewUserController implements Initializable {
         }
     }
 
+    /**
+     * Reset password.
+     */
     public void resetPassword(){
         if( (newPasswordField1.getText().isEmpty() || (newPasswordField2.getText().isEmpty())
                 || (usernameField.getText().isEmpty()) || backupKeyField.getText().isEmpty())){
@@ -110,6 +119,9 @@ public class NewUserController implements Initializable {
         }
     }
 
+    /**
+     * Log in.
+     */
     public void logIn(){
         KeyAquaApplication m = new KeyAquaApplication();
         try {
@@ -119,6 +131,9 @@ public class NewUserController implements Initializable {
         }
     }
 
+    /**
+     * Return home.
+     */
     public void returnHome(){
         KeyAquaApplication m = new KeyAquaApplication();
         try {
@@ -131,6 +146,9 @@ public class NewUserController implements Initializable {
     @FXML
     private MediaView mediaPlayer;
 
+    /**
+     * Gets loading video.
+     */
     public void getLoadingVideo() {
 
         Media media = new Media(
