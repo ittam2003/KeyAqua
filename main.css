@@ -1,0 +1,60 @@
+/* Apply CSS styling to the body */
+body {
+    font-family: Inter, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+/* Style the header */
+h1 {
+    color: #000000;
+    text-align: center;
+    padding: 20px 0;
+}
+
+h2 {
+    color: #000000;
+    text-align: center;
+    padding: 20px 0;
+}
+
+p {
+    color: #000000;
+    text-align: center;
+    padding: 20px 0;
+}
+
+/* Style the links list */
+ul {
+    list-style-type: none;
+    padding: 0;
+    text-align: center;
+}
+
+/* Style the list items */
+li {
+    margin: 10px 0;
+}
+
+/* Style the links */
+a {
+    text-decoration: none;
+    color: #3ade69;
+    transition: color 0.3s;
+}
+
+/* Hover effect for links */
+a:hover {
+    color: #000000;
+}
+
+/* Style the image */
+img {
+    display: block;
+    margin: 0 auto;
+    border: 2px solid #333;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    max-width: 100%;
+}
