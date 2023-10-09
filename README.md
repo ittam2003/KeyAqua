@@ -2,7 +2,7 @@
 
 GitLocker is your ultimate solution for securely storing and efficiently managing extensive SSH keys, all while streamlining your Git-related tasks. Say goodbye to the hassle of handling SSH keys manually and welcome a seamless experience with GitLocker.
 
-[Website](https://rawcdn.githack.com/mattkje/GitLocker/879d71fe5fe41fec33ec82e09660a74480874343/index.html)
+[GitLocker Website](https://rawcdn.githack.com/mattkje/GitLocker/6bb1cd7a044e8b3d080d6aea9d13207df259002c/index.html)
 
 
 ## Features
