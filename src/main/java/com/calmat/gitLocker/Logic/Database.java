@@ -182,6 +182,24 @@ public class Database {
         return keyChain;
     }
 
+    public KeyChain loadKeys2() {
+        KeyChain keyChain = new KeyChain();
+        try (BufferedReader reader = new BufferedReader(new FileReader("data/userData/" + getActiveUserAsString()+".dat"))) {
+            String line = reader.readLine();
+            while (line != null) {
+                String[] fields = line.split(" --- ");
+                Key tempKey = new Key(fields[0], fields[1]);
+                keyChain.addKey(tempKey);
+                // Reads next line of text from an input source
+                line = reader.readLine();
+            }
+        } catch (
+            IOException e) {
+            e.printStackTrace();
+        }
+        return keyChain;
+    }
+
 
     /**
      * Generate password string.
